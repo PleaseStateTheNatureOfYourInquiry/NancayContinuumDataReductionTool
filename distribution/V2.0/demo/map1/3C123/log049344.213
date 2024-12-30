@@ -1,0 +1,15 @@
+cclan8,24/08/03 06:02:23.22,049344,ALL,I,str,#################### DEBUT DU SCAN 49344 ##################
+cclan8,24/08/03 06:02:23.23,049344,ALL,I,str,Scan=49344.213 Map=1.213 Sou=119.170
+cclan2,24/08/03 06:02:24.69,049344,SYS,I,clientTimeVx,Ecart=4 centiemes de seconde
+cclan4,24/08/03 06:02:27.09,049344,SYS,I,clientTimeVx,Ecart=-3 centiemes de seconde
+cclan3,24/08/03 06:02:27.13,049344,SYS,I,clientTimeVx,Ecart=1 centiemes de seconde
+cclan3,24/08/03 06:02:28.18,049344,SYS,I,tskintegsfr,---Depart 24/08/2003 06:02:28.18 Tau=125 Can=1 2 3 4---
+cclan4,24/08/03 06:02:29.27,049344,ALL,I,pointagenormal,Debut Pointage I=54155 deltaI=32137
+cclan8,24/08/03 06:05:01.80,049344,SYS,I,mahfi,Mise a l'heure NANRT7 Ecart=2
+cclan4,24/08/03 06:10:47.84,049344,ALL,I,pointagenormal,Fin Pointage
+cclan4,24/08/03 06:13:31.00,049344,USR,I,gerperchamir,Depart effectif Scan=49344 24/08/2003 06:13:31.00
+cclan2,24/08/03 06:13:31.00,049344,USR,I,gerperacqrec,Depart effectif Scan=49344 24/08/2003 06:13:31.00
+cclan4,24/08/03 06:18:16.99,049344,USR,A,gerperchamir,Arret   normal Scan=49344 a 24/08/2003 06:18:16.99
+cclan2,24/08/03 06:18:17.00,049344,USR,A,gerperacqrec,Arret   normal Scan=49344 a 24/08/2003 06:18:17.00
+cclan9,24/08/03 06:18:17.11,049344,ALL,I,server9,Renome le fichier /datb/brute/fil049344.opn en /datb/brute/fil049344.213
+cclan8,24/08/03 06:18:22.23,049344,ALL,I,str,####################  FIN DU SCAN 49344  ####################

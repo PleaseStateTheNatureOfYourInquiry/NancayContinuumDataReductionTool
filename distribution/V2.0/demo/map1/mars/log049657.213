@@ -1,0 +1,14 @@
+cclan8,01/09/03 23:08:31.79,049657,ALL,I,str,#################### DEBUT DU SCAN 49657 ##################
+cclan8,01/09/03 23:08:31.80,049657,ALL,I,str,Scan=49657.213 Map=1.213 Sou=21.213
+cclan2,01/09/03 23:08:33.07,049657,SYS,I,clientTimeVx,Ecart=8 centiemes de seconde
+cclan4,01/09/03 23:08:33.43,049657,SYS,I,clientTimeVx,Ecart=6 centiemes de seconde
+cclan3,01/09/03 23:08:33.45,049657,SYS,I,clientTimeVx,Ecart=7 centiemes de seconde
+cclan3,01/09/03 23:08:34.53,049657,SYS,I,tskintegsfr,---Depart 01/09/2003 23:08:34.53 Tau=125 Can=1 2 3 4---
+cclan4,01/09/03 23:08:35.60,049657,ALL,I,pointagenormal,Debut Pointage I=77077 deltaI=7151
+cclan4,01/09/03 23:13:17.32,049657,ALL,I,pointagenormal,Fin Pointage
+cclan4,01/09/03 23:15:29.00,049657,USR,I,gerperchamir,Depart effectif Scan=49657 01/09/2003 23:15:29.00
+cclan2,01/09/03 23:15:29.00,049657,USR,I,gerperacqrec,Depart effectif Scan=49657 01/09/2003 23:15:29.00
+cclan4,01/09/03 23:20:15.00,049657,USR,A,gerperchamir,Arret   normal Scan=49657 a 01/09/2003 23:20:15.00
+cclan2,01/09/03 23:20:15.00,049657,USR,A,gerperacqrec,Arret   normal Scan=49657 a 01/09/2003 23:20:15.00
+cclan9,01/09/03 23:20:15.09,049657,ALL,I,server9,Renome le fichier /datb/brute/fil049657.opn en /datb/brute/fil049657.213
+cclan8,01/09/03 23:20:18.06,049657,ALL,I,str,####################  FIN DU SCAN 49657  ####################

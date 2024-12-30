@@ -1,0 +1,6 @@
+COMMON CUT_SETTING_CB, $
+       scissor, $              ; 0 (1) for normal (detailed) scissor mode
+       t_offset_low, $         ; the time of the low limit offset cut 
+       t_offset_high, $        ; the time of the high limit offset cut 
+       t_peak_low, $           ; the time of the low limit peak cut
+       t_peak_high             ; the time of the high limit peak cut

@@ -1,0 +1,16 @@
+cclan8,28/08/03 00:03:06.48,049474,ALL,I,str,#################### DEBUT DU SCAN 49474 ##################
+cclan8,28/08/03 00:03:06.49,049474,ALL,I,str,Scan=49474.213 Map=1.213 Sou=19.213
+cclan2,28/08/03 00:03:08.01,049474,SYS,I,clientTimeVx,Ecart=3 centiemes de seconde
+cclan4,28/08/03 00:03:10.55,049474,SYS,I,clientTimeVx,Ecart=-1 centiemes de seconde
+cclan3,28/08/03 00:03:10.58,049474,SYS,I,clientTimeVx,Ecart=1 centiemes de seconde
+cclan3,28/08/03 00:03:11.63,049474,SYS,I,tskintegsfr,---Depart 28/08/2003 00:03:11.63 Tau=125 Can=1 2 3 4---
+cclan9,28/08/03 00:03:12.62,049474,ALL,I,server9,Renome le fichier /datb/DDSlog/gps/NGPS.878 en /datb/DDSlog/gps/send/NGPS.878
+cclan4,28/08/03 00:03:13.83,049474,ALL,I,pointagenormal,Debut Pointage I=76874 deltaI=37275
+cclan8,28/08/03 00:05:01.20,049474,SYS,I,mahfi,Mise a l'heure NANRT7 Ecart=-1
+cclan4,28/08/03 00:12:22.08,049474,ALL,I,pointagenormal,Fin Pointage
+cclan4,28/08/03 00:15:05.00,049474,USR,I,gerperchamir,Depart effectif Scan=49474 28/08/2003 00:15:05.00
+cclan2,28/08/03 00:15:05.00,049474,USR,I,gerperacqrec,Depart effectif Scan=49474 28/08/2003 00:15:05.00
+cclan4,28/08/03 00:19:50.99,049474,USR,A,gerperchamir,Arret   normal Scan=49474 a 28/08/2003 00:19:50.99
+cclan2,28/08/03 00:19:51.00,049474,USR,A,gerperacqrec,Arret   normal Scan=49474 a 28/08/2003 00:19:51.00
+cclan9,28/08/03 00:19:51.10,049474,ALL,I,server9,Renome le fichier /datb/brute/fil049474.opn en /datb/brute/fil049474.213
+cclan8,28/08/03 00:19:56.32,049474,ALL,I,str,####################  FIN DU SCAN 49474  ####################

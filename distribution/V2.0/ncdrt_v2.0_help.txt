@@ -1,0 +1,618 @@
+
+
+							Lisbon, 02-08-2004
+							
+
+          Nancay Continuum Data Reduction Tool V2.0 (July 2004)
+
+                          The HELP file
+
+
+ 1. Introduction.
+   1.1 Why NCDRT.
+   1.2 Installing and adapting NCDRT to your system.
+
+ 2. Working with NCDRT.
+   2.1 Preparing for using NCDRT.
+   2.2 Starting NCDRT.
+   2.3 Description of the text windows, buttons and consequent actions.
+     2.3.1 Left column of the widget.
+     2.3.2 Right column of the widget.
+   2.4 The planet.longitude file.
+
+
+ 3. Working with the Calibration Tool.
+   3.1 Description of the text windows, buttons and consequent actions.
+   3.2 Explanation on the calibration plot window.
+
+ 4. The working of NCDRT, some details.
+   4.1 Working of routines  SHOW_LIN_CUT and APPLY_LIN_CUT .
+
+ 5. Demonstration data from project Mars P3B01.
+
+ 6. Responsibility and use of NCDRT.
+
+
+
+ 1. Introduction.
+
+ 1.1 Why NCDRT.
+
+ These are the detailed instructions  for using and adapting the NCDRT
+ V2.0 (July 2004).  The tool  has been developed to reduce and analyse
+ continuum data acquired with the Nancay Radio Telescope (NRT). It has
+ been  developed in the  first place  to deal  with data  from project
+ P3B01, for which planet Mars  was observed between July 2003 and June
+ 2004.
+
+ NCDRT  has not  been  developed by  a  professional programmer.   The
+ programming  style is  quite  pragmatic and  certainly  not the  most
+ optimum.   Yet, is  works.  The  file and  parameter names  have been
+ chosen to be as obvious as possible, and as much comments as possible
+ have been included in the programme sources (but certainly not enough
+ :-)).
+
+
+
+ 1.2 Installing and adapting NCDRT to your system.
+
+ NCDRT uses  IDL 5.4  or higher.  Untar  the NCDRT_V2.0.tar file  to a
+ directory      of      your      choice,     for      example      in
+ /home/your_name/idlproc/NCDRT/.  Also include  the following  line in
+ your .cshrc file:
+
+   setenv IDL_PATH /home/your_name/idlproc/NCDRT:${IDL_PATH}
+
+ This will make IDL search this directory for any programme files.
+
+ Some routines in NCDRT use  the /bin/rm and /bin/cp command to remove
+ and copy temporary files. On some computer systems these commands are
+ located in the /sbin or  other directories.  Please check this before
+ you run NCDRT. If necessary change the lines in the following places:
+
+  delete_from_cal_table.pro 
+  read_list.pro
+  write_2_cal_table.pro
+
+ look for the  'USER: RM and CP commands'  keyword in these files.
+
+ The routine  read_list.pro  uses the command /bin/ls. Look for the 
+ 'USER: LS command' keyword in this file if a change is required.
+
+
+ 2. Working with NCDRT.
+
+ 2.1 Preparing for using NCDRT.
+
+ Data from the NRT come in four files with the following structure:
+
+   fil050673.213
+   pou050673.213
+   log050673.213
+   sfr050673.213
+
+ 050673 is  the observation id, 213  is the observer id.  The data are
+ stored  in the fil  file. The  pou file  contains information  on the
+ observation setup. The log file contains a log of the observations.
+
+ The  programme NAPS,  developed  by  the NRT-team,  must  be used  to
+ preprocess the  data. NCDRT uses  fits files. NAPS can  transform the
+ initial NRT data to fits format.
+
+ In order to  use NCDRT correctly, the fits files must  be in the same
+ directory as the  original data files. In order  to achieve this, set
+ the directory to write the fits files in NAPS:
+
+   NAPS> set result fits
+   NAPS> set dirdata /home/your_name/ncdrt/data/
+   NAPS> set dirfits /home/your_name/ncdrt/data/
+
+ With the NAPS  save command NRT data read into NAPS  is saved to fits
+ files with the following file  format, averaging over the cylces, one
+ fits file for each of the eight channels:
+
+    f050673_f1.fits
+    f050673_f2.fits
+    f050673_f3.fits
+             .
+             .
+    f050673_f8.fits
+ 
+
+ 
+ 2.2 Starting NCDRT.
+
+ Once the  data has been transformed  into fits files,  NCDRT can read
+ them.  Start a new session of IDL and type
+
+  idl> @ncdrt.com  
+
+ to compile the programme files. 
+
+ Then type  ncdrt  at the command line to start NCDRT.
+
+
+ 
+ 2.3 Description of the text windows, buttons and consequent actions.
+
+ The NCDRT  interaction widget has several buttons,  whose names speak
+ for themselves. 
+
+
+ 2.3.1 Left column of the widget.
+
+ Description of  the left column of  the widget and  going through the
+ rows from top to bottom:
+
+
+ Load Data File:  load_obs.pro  with  switch  'next_obs' = 0
+   A pick file dialog widget pops  up. The files listed by this widget
+   are the f*_f1.fits files present in the directory. Select a file to
+   load the data into NCDRT.
+
+   The eight channels are loaded and stored. Seven average channels are
+   being calculated and stored as channels 9-15.  Default is:
+
+     channel  9 = (channel 1 + channel 3) / 2
+     channel 10 = (channel 2 + channel 4) / 2
+     channel 11 = (channel 5 + channel 7) / 2
+     channel 12 = (channel 6 + channel 8) / 2
+     channel 13 = (channel 1 to channel 4) / 4
+     channel 14 = (channel 5 to channel 8) / 4
+     channel 15 = (channel 1 to channel 8) / 8
+
+   This can  of course  be changed  by the user.   In this  case, also
+   change the naming of the channels stored in parameter channel_print
+   and  defined  in  ncdrt_display.pro.  Average  channel  calibration
+   needs also to be redefined in the routine write_2_cal_table.pro, as
+   well as  the automatic (de-)selection of averaging  channels if the
+   Averaging Switch (see description of this switch) is pressed for to
+   change  from normal to  average mode  in the  current observation's
+   process (ncdrt_display_event.pro).
+   
+   Search for the  USER: AVERAGING   keyword in these programme files.
+
+
+   Whenever a fits  file is loaded, the fits file  list of the current
+   directory is  determined and stored in  NCDRT. This is  used in the
+   Load Next Data File and  Load Previous Data File actions (see below
+   for description).
+
+   Information  on the  current data  is read  from the  pou  file and
+   displayed in the first text window.  This is why it is mandatory to
+   have these files in the same directory as the fits files.
+
+   load_obs.pro  will also  search for  the presence  of  result files
+   produced previously. If it finds such  a file, it will read and set
+   the  slider settings  from it.  The order  of priority  is .res_cal
+   .res_av_cal .res .res_av (see  Save Result).  The routines involved
+   are  read_res.pro and read_res_av.pro  In case  there is  no result
+   file, NCDRT will define standard settings for the sliders.
+
+   After  loading the  data and  setting  the sliders,  the result  is
+   determined by  calling show_lin_cut.pro and  apply_lin_cut.pro (see
+   section 4.1 on the working of these routines).
+
+   The  results are  shown on  the  plots (scissors  and results)  and
+   written to the large text window in the right column.
+
+   The 'n_channel'  and 'ch_address'  are kept as  they are.   For the
+   first file of a new session, they are set to
+
+     n_channel = 8
+     ch_address = 0
+       
+   This means that the first eight channels are being processed.
+
+
+ Scissor Switch:  show_lin_cut.pro  with switch  'scissor'
+  This function changes the scissor window between the normal mode and
+  the detailed  mode. The normal mode  shows the entire  drift and the
+  current  cutting settings. The  detailed mode  devides the  drift in
+  three  parts, the  offset  (left  and right)  and  the central  part
+  (peak).  This is useful  is the  contrast between  the peak  and the
+  offset is large.
+
+
+ Load Next Data File:  load_obs.pro  with  switch  'next_obs' = 1
+   Loads the next  data file in the current  directory.  In case there
+   are  no more  files,  the  pick file  dialog  widget appears.   The
+   settings of the sliders are not changed.
+    
+
+ Load Previous Data File:  load_obs.pro  with  switch  'next_obs' = -1
+   Loads the previous data file in the current directory. If there are
+   no  previous  files, the  pick  file  dialog  widget appears.   The
+   settings of the sliders are not changed.
+ 
+
+ Averaging  Switch: ncdrt_display_event.pro  switches  'n_channel' and
+                   'ch_address'   
+   The  'n_channel' and  'ch_address'  switches are  changed to  their
+   other values. The possible values for these switches are
+
+      (n_channel,ch_address)  = (8,0)  or  (7,8)
+       
+    The  first set  means  that  the first  eight  channels are  being
+    processed,  the  second  set  is  for the  last  seven  (averaging
+    channels).
+
+    Upon changing  from normal to averaging the  channel select string
+    information  of  the normal  setting  is  kept.   Also an  average
+    channel is automatically deselected  if one of the normal channels
+    that are included in this average channel are deselected.
+
+
+ Observation information window:
+   Shows  information (name,  time, etc.)  of the  current observation
+   loaded into NCDRT.
+
+
+ Process information window:
+   Shows  information (warnings etc.) of the current process.
+
+
+ NCDRT Calibration Tool: calibration_display.pro  and associated routines
+   Invokes the calibration tool. See section 3 for a detailed description.
+
+
+ Create .ps  Of Result (Standard): write_result_2_ps.pro 
+   This creates a standard postscript file of the current result, like
+   in Save  Result (see above). The  postscript file is  named like in
+   Save Result, with the extention .ps to it.
+
+   Only  those channels are  selected which  have a  1 in  the channel
+   select string.   In this way, you  can for example  output just the
+   result of 1 channel at wish.
+
+   The slider  settings are indicated  in the plot by  dotted (offset)
+   and dashed (peak) lines.
+
+   Other information  is also written in  the plot. From  the pou file
+   come the indications  of the frequency and the  name of the object.
+   The indication (cal) (or (not cal)) after the 'peak flux' string in
+   the plot indicate that the data were calibrated (or not calibrated)
+   with a calibration table.
+  
+ 
+ Create .ps  Of Result (Choose Name): write_result_2_ps.pro 
+   Same as  previous button, but  now you can  choose the name  of the
+   result file.
+
+
+ 2.3.2 Right column of the widget.
+
+ Description of the  right column of the widget  and going through the
+ rows from top to bottom:
+
+ Apply Calibration (Short Cut):  apply_calibration.pro
+   Using this button the  calibration of the current calibration table
+   is applied to the data without having to go to the Calibration Tool
+   Widget.   It  is  the  same  as Apply  Calibration  button  of  the
+   Calibration  Tool.    The  function  will  only  be   active  if  a
+   calibration  table  is present.   This  and  all other  calibration
+   functions have to be performed with the Calibration Tool.
+
+
+ Comment Text  Window: 
+   This window is  an editable window.  It allows the  user to write a
+   maximum of 40 characters long comment line. The line is included in
+   the result file when the  'Save Result' buttom is pressed, preceded
+   by the word ' Comment : '.  By using the grep and awk function in a
+   UNIX operating system  on all the existing result  files a log file
+   of all the comments can easily be made.
+
+  
+ Save Result: save_res.pro
+   Save the current result to a  standard file. There are four types of
+   result files, depending on the status of the process:
+           
+     f050673.res, first 8 channels with no calibration applied
+     f050673.res_av, averaging channels with no calibration applied
+     f050673.res_cal, first 8 channels with calibration applied
+     f050673.res_av, averaging channels with calibration applied
+
+   Do never  change the  structure of these  files. NCDRT will  not be
+   able to read them afterwards.
+
+
+ Sliders: ncdrt_display_event.pro  and  show_lin_cut.pro
+   There are four sliders: 
+
+     Offset Low
+     Offset High
+     Peak Low
+     Peak High
+
+   The offset  sliders determine the part  of the data to  be used for
+   the determination  of the offset.   There is a  build-in protection
+   that prevents  these sliders from having  inappropriate values: the
+   peak sliders must be at least  4 time units apart for the curve_fit
+   procedure  in the apply_lin_cut.pro  routine to  work, and  the low
+   offset slider  cannot be larger  than the high offset  slider.  low
+   sliders cannot be set to more than half the range, Also, the offset
+   sliders cannot  be set to 0 or  to the maximum of  points.  This is
+   checked in  show_lin_cut.pro .  See section 4.1  for further detail
+   on the working of show_lin_cut.pro and apply_lin_cut.pro .
+
+   The result of the cutting can  be seen in the Scissors plot window.
+   They change dynamically as the  slider values are changed. See also
+   the explanation of the 'Scissor Switch', in section 2.3.1 .
+
+
+ Information Text Window:
+   This window shows the result of the current fit to the data. It are
+   the values  which will be written to  a file if you  press the Save
+   Result button. See  section 4.1 for more details  on the meaning of
+   the numbers.
+
+
+ Channel Select String: 
+   The last text window in the right hand column contains the editable
+   channel select  string. A  '1' means that  the selected  channel is
+   processed  and  written to  the  result  file,  if this  action  is
+   required.  A '0' means that the channels is ignored. In the case of
+   processing  the  fours  averaging  channels, only  the  first  four
+   switches of the channels select string are taken into account.  The
+   use of the Averaging Switch resets the channel select string to all
+   default values (all '1').
+                       
+
+ Quit: ncdrt_display_event.pro
+       Quit NCDRT and kill all the windows.
+
+
+
+ 2.4 The planet.longitude file.
+
+ NCDRT will search for a  file named planet.longitude in the directory
+ /home/your_name/idlproc/NCDRT/planet/ . This  file contains a list of
+ the scan  numbers (preceded by the  letter 'f', and  without the user
+ id),  and the  Central  Meridian Longitude,  Sub  Earth Latitude  and
+ Distance to the Earth (AU) of  the planet that the user has observed.
+ The user must  create this file. It is  read in the ncdrt_display.pro
+ routine (near the end). The  user can change the filename, place, and
+ formatting at  wish. The  format of the  file must correspond  to the
+ format of the reading.
+
+ If  an observation  of the  planet is  reduced and  a result  file is
+ saved, and if that file  is listed in the planet.longitude file, then
+ an information  line is  written just below  the comment line  in the
+ result file.  If the file is  not found, or if the observation is not
+ in the list, then nothing is written (see the routine save_res.pro ).
+
+ This feature  can be helpful  if a study  of the radio emission  of a
+ planet as a function of Central Meridian Longitude and time is made.
+
+ An example  file is included  in this distribution,  corresponding to
+ the Mars file in the /home/your_name/idlproc/NCDRT/demo/ directory.
+
+
+
+ 3. Working with the Calibration Tool
+
+ The calibration tool allows  to create and change calibration tables,
+ as well as  apply or de-apply calibration parameters  to data.  NCDRT
+ must be  in the eight  channel mode (no  averaging) for this  tool to
+ work properly. 
+
+
+ 3.1 Description of the text windows, buttons and consequent actions.
+
+
+ Create New Calibration Table: calibration_display_event.pro
+   Create a  new calibration table and  write it to  the file selected
+   with the pick file dialog widget. Any file name can be given.
+
+
+ Read Existing Calibration Table: read_cal_table.pro
+   Read  an existing calibration  table. The  pick file  dialog widget
+   allows to chose the file. NCDRT checks if the file is a calibration
+   table or not.
+
+
+ Calibration table information text window:
+   This  window contains  the information  about the  currently loaded
+   calibration table.
+
+
+ Write To Calibration Table: write_2_cal_table.pro
+   This is  the routine  which does the  actual calibration.  The user
+   must program  her/his calibrators and  frequencies. At the  time of
+   writing,  three  calibrators  are  included, with  the  frequencies
+   corresponding to  the maps  1 -  6 of the  P3B01 Mars  project. The
+   routine uses the frequency read  by load_obs.pro in the pou file to
+   identify the frequency set to use (parameter central_freq). It then
+   checks  the name  of the  object (parameter  object), also  read by
+   load_obs.pro  from   the  pou   file.  If  it   does  not   find  a
+   correspondance   between   the  object   name   and  the   included
+   calibrators, it will notify that no calibrator was found.
+
+   The  absolute fluxes  for  the three  calibrators included  (3C123,
+   3C161  and 3C295)  are taken  from Ott  et al.  (A&A  284, 331-339,
+   1994, Table 5).
+
+   Once the absolute fluxes  are calculated, the routine compares them
+   to  the  measured  fluxes  from the  calibrator  observation.   The
+   calibration factor  for each  channel is determined  (including the
+   error, which  is the  total error, see  section 4.1), also  for the
+   averaging  channels.  It  is  assumed that  the  calibrator is  non
+   polarised,  so that every  channels corresponds  to half  the total
+   flux (in fact, the total flux  is what is written in these channels
+   by NAPS).
+
+
+   The results of this exercise  are written to the calibration table.
+   They  are  also  plotted   in  the  calibration  plot  window  (see
+   calibration plot window for explanation).
+
+   Here  the channel select  string is  taken into  account !  You can
+   select the good and bad channels for your calibrator.
+
+
+ Delete From Calibration Table: delete_from_cal_table.pro
+   Delete  the current calibrator  from the  calibration table,  if it
+   exists in the table.
+
+
+ Create .ps Of Calibration Table: calibration_display_event.pro
+   Create a postscript  file of the calibration table  data.  The file
+   name  of  the  postscript  file  will  be  the  file  name  of  the
+   calibration table followed by .ps .
+
+
+ Calibration process information:
+   This window contains information  (warnings etc.) about the current
+   process.
+
+
+ Apply Current Calibration: apply_calibration.pro   
+   Apply the  calibration factors of the current  calibration table to
+   the  current  data.  Each  channel  is  multiplied  by the  set  of
+   calibration factors (8+4 channels)  from the calibration table that
+   is  closest  in time  to  the  current  observation.  This  can  be
+   different  for different channels,  as not  all channels  will have
+   good  calibration data  for each  observation !   In  this version,
+   nothing is done with the calibration factor error.
+
+
+ De-apply Current Calibration: calibration_display_event.pro
+   De-apply any calibration of the  current data. In fact, the current
+   data is restored to  its initial values (copy from channel_data_ori
+   to the channel_data parameter).
+
+
+ Dismiss: calibration_display_event.pro
+   Dismiss the calibration tool, and  kill the plot window if any.  If
+   any calibration  table was loaded,  this table will stay  loaded in
+   NCDRT.
+
+
+
+ 3.2 Explanation on the calibration plot window.
+
+ In this window  the calibration factors for each  channel as from the
+ current calibration  table are plotted  and updated if any  action is
+ taken (new calibration data  or deleting of calibration data).  There
+ are 8 sets of 2 frames.  These correspond to the eight channels.  The
+ top  frame of each  set shows  the entire  calibration data  for that
+ channel, the lower frame shows a  detail of that data only around the
+ time of the current observation. A dotted vertical line indicates the
+ position of the current observation time.  If this time is out of the
+ calibrator table range, the whole  set is also plotted in the smaller
+ frame.
+
+ In the  first seven sets, the  dashed line correspond  to the average
+ channels (9-15).
+
+ A cross  means that the channel  was not selected  for the particular
+ time.
+
+ If a  new data file is  loaded, while the calibration  tool is active
+ with calibration  table loaded, then  the calibration plot  window is
+ updated to show the time of the current observation.
+
+
+ 4. The working of NCDRT, some details.
+
+ The source files are all human readable files. All the programmes are
+ .pro files. The .CB files  are the Common Blocks.  The ncdrt_v1.0.pro
+ file contains the  first version of NCDRT, which  is quite primitive.
+ NCDRT uses the READFITS.PRO routine from the IDL astro routines.  The
+ complete set of these routines can be found on URL:
+
+         idlastro.gsfc.nasa.gov/homepage.html
+
+ The routine is included in this distribution of NCDRT.
+
+
+ 4.1 Working of routines  SHOW_LIN_CUT and APPLY_LIN_CUT .
+
+ A NRT drift scan is a measure  of the flux as a function of time. The
+ first three seconds  of the scan are used  to observe the calibration
+ noise tube.  NCDRT ignores these  first three items.  The rest of the
+ scan sees the  system noise and the source, as  it drifts through the
+ field of view  of the system. In order to  measure the source's flux,
+ the  system noise needs  to be  subtracted. It  is assumed  that this
+ noise, the offset, is a line as a function of time.
+
+ The offset sliders (see section 2.3) determine which part of the scan
+ is  used for  the  offset line  determination.  This is  from t=1  to
+ t=offset_low plus t=offset_high to  t=end_scan. The offset limits are
+ defined  and  the  same  for  all  the channels.  The  line  is  then
+ subtracted from the whole scan.  Now the peak value of the object can
+ be measured.
+
+ The offset sliders determine the part  of the data to be used for the
+ determination  of the offset.   There is  a build-in  protection that
+ prevents  these sliders  from having  inappropriate values:  the peak
+ sliders  must  be at  least  4 time  units  apart  for the  curve_fit
+ procedure  in the  apply_lin_cut.pro  routine to  work,  and the  low
+ offset  slider cannot  be larger  than the  high offset  slider.  low
+ sliders cannot be  set to more than half the  range, Also, the offset
+ sliders cannot  be set  to 0 or  to the  maximum of points.   This is
+ checked  in  the   show_lin_cut.pro  routine.   The  show_lin_cut.pro
+ routine then plots the first channel (by default, this can be changed
+ by  the  user), corrected  by  the offset,  in  a  small plot  window
+ (scissors) and shows the offset lines.
+
+ The peak  sliders determine which part of  the scan is to  be used to
+ fit the peak of the object. This is also plotted in the scissors-plot
+ by show_lin_cut.pro .
+
+ The  routine  apply_lin_cut.pro  fits  a  gaussian  function  to  the
+ selected  peak.   It  uses  the  IDL routine  GAUSSFIT  with  initial
+ estimates of the four parameters a(0), a(1), a(2) and a(3).
+
+   f(x) = a(0) * EXP(-z^2 / 2) + a(3)
+   with   z = (x-a(1)) / a(2)
+
+ The results  are shown in  the result plot  window and in  the result
+ text box in  the right hand colomn of the NCDRT  widget.  The flux at
+ the peak is a(0) + a(3).
+
+ Three estimates of the noise level are calculated and reported:
+
+   (1) standard deviation  of the (peak  - gaussian fit) for  the peak
+       selection of the scan only;
+
+   (2) standard deviation  of the (scan - offset_line)  for the offset
+       selection of the scan only;
+
+   (3) standard deviation of the combination of (1) and (2).
+
+
+
+ 5. Demonstration data from project Mars P3B01.
+
+ The  directory /home/your_name/idlproc/NCDRT/demo/ contains  a couple
+ of observations of  Mars and of the calibrator  source 3C123 taken at
+ the end of August 2003.  You  can test the funcionalities of NCDRT on
+ these   data.   Just   untar   the   NCDRT_demo.tar   file   to   the
+ /home/your_name/idlproc/NCDRT  directory (or  any other  directory of
+ your choice).
+
+
+
+ 6. Responsibility and use of NCDRT.
+
+ I am not responsible of the correct or incorrect working of NCDRT.  I
+ have tested the tool  and I use it to reduce and  analyse my own data
+ (project P3B01): it seems to work fine.  I am not responsible for any
+ problems with your  data that may occur from  using NCDRT.  Always be
+ careful  with your  data, and  make a  backup copy  before  you start
+ reducing and analysing.
+ 
+ Please   feel   free   to   ask   any   questions   about   or   give
+ comments/suggestions  on NCDRT.   Please also  feel free  to  use the
+ source files  and adapt  them to your  personal needs,  expanding the
+ tool with many other utilities. Keep me informed !
+
+
+ Maarten Roos-Serote
+ Lisbon, August 2004.
+ email: roos@oal.ul.pt
+
+
+
+

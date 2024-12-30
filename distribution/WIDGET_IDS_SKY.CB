@@ -1,0 +1,13 @@
+COMMON WIDGET_IDS_SKY_CB,$
+       main_slider_track_switch, $; ID main slider track switch
+       sky_base, $             ; ID sky base 
+       sky_dismiss, $          ; ID sky dismiss button
+       sky_file_info, $        ; ID current sky information
+       sky_load_obs, $         ; ID load sky observation
+       sky_process_info, $     ; ID sky process info
+       sky_slider_offset_high, $ ; ID sky slider high limit offset cut 
+       sky_slider_offset_low, $; ID sky slider low limit offset cut 
+       sky_slider_shift, $     ; ID sky slider shift
+       sky_subtract_do, $      ; ID do the sky subtraction
+       sky_subtract_undo       ; ID undo the sky subtraction
+

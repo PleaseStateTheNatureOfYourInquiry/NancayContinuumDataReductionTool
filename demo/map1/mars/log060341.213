@@ -1,0 +1,15 @@
+cclan8,07/05/04 08:13:26.88,060341,ALL,I,str,#################### DEBUT DU SCAN 60341 ##################
+cclan8,07/05/04 08:13:26.90,060341,ALL,I,str,Scan=60341.213 Map=1.213 Sou=55.213
+cclan2,07/05/04 08:13:27.53,060341,SYS,I,clientTimeVx,Ecart=0 centiemes de seconde
+cclan7,07/05/04 08:13:27.57,060341,SYS,I,clientTimeVx,Ecart=0 centiemes de seconde
+cclan4,07/05/04 08:13:27.59,060341,SYS,I,clientTimeVx,Ecart=1 centiemes de seconde
+cclan3,07/05/04 08:13:27.66,060341,SYS,I,clientTimeVx,Ecart=1 centiemes de seconde
+cclan3,07/05/04 08:13:28.70,060341,SYS,I,tskintegsfr,---Depart 07/05/2004 08:13:28.70 Tau=125 Can=1 2 3 4---
+cclan4,07/05/04 08:13:30.77,060341,ALL,I,pointagenormal,Debut Pointage I=71388 deltaI=10856
+cclan4,07/05/04 08:18:28.76,060341,ALL,I,pointagenormal,Fin Pointage
+cclan4,07/05/04 08:21:00.00,060341,USR,I,gerperchamir,Depart effectif Scan=60341 07/05/2004 08:21:00.00
+cclan2,07/05/04 08:21:00.00,060341,USR,I,gerperacqrec,Depart effectif Scan=60341 07/05/2004 08:21:00.00
+cclan4,07/05/04 08:25:47.99,060341,USR,A,gerperchamir,Arret   normal Scan=60341 a 07/05/2004 08:25:47.99
+cclan2,07/05/04 08:25:48.00,060341,USR,A,gerperacqrec,Arret   normal Scan=60341 a 07/05/2004 08:25:48.00
+cclan9,07/05/04 08:25:48.09,060341,ALL,I,server9,Renome le fichier /datb/brute/fil060341.opn en /datb/brute/fil060341.213
+cclan8,07/05/04 08:25:50.45,060341,ALL,I,str,####################  FIN DU SCAN 60341  ####################

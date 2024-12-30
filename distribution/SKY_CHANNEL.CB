@@ -1,0 +1,12 @@
+COMMON SKY_CHANNEL_CB, $
+       sky_central_freq, $     ; central frequency of the sky observation (MHz)
+       sky_channel_data, $     ; matrix with the sky data (16,n_points)
+       sky_channel_data_ori, $ ; unprocessed copy of the data matrix
+       sky_channel_print, $    ; name of the sky channel
+       sky_julian_obs , $      ; julian date of the mid time of sky observation
+       sky_n_points, $         ; number of points per channel
+       sky_object, $           ; string (length 7) with sky name
+       sky_scan_number , $     ; string with the scan number in process
+       sky_time_start , $      ; vector with end time of sky observation
+       sky_time_end            ; vector with end time of sky observation
+

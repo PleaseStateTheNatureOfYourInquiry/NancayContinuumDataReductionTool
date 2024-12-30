@@ -1,0 +1,14 @@
+COMMON CALIBRATION_CB,$
+       apply_factors, $        ; vector with cal. factor for each channel
+       apply_factors_error, $  ; vector with errors in cal. factor for each ch.
+       calibration_applied, $  ; 1 (0) if calibration is (not) applied to data
+       calibration_data_path, $; string vector with data path
+       calibration_factors, $  ; matrix with calibration factors
+       calibration_factors_error, $  ; matrix with calibration factors errors
+       calibration_file_base, $; string vector with calibrator file names
+       calibration_object, $   ; string vector with calibrator names
+       calibration_time, $     ; vector with calibration times
+       cal_table, $            ; name of the calibration table
+       cal_table_path, $       ; absolute path of the calibration table
+       cal_tool_active, $      ; 1 (0) if calibration tool is (not) active
+       n_cal_points            ; number of points in calibration table

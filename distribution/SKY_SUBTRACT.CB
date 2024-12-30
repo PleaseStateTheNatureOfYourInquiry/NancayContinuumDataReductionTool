@@ -1,0 +1,4 @@
+COMMON SKY_SUBTRACT_CB,$
+       sky_subtract_apply, $          ; 1 (0) if sky subtraction (not) applied
+       sky_subtract_tool_active       ; 1 (0) if sky subtraction tool is (not)
+                                      ; active

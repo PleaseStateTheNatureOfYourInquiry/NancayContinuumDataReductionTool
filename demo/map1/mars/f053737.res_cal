@@ -1,0 +1,65 @@
+ 
+ File : f053737.res_cal
+ 
+ Nancay Continuum Data Reduction Tool V2.1 (August 2004)
+ 
+ Object : Mars 28 novembre 2003              
+ 
+ Central Frequency : 1413.50 MHz 
+ 
+ Start time : 28 11 2003  at 18h 31m  3s  UT
+ End time   : 28 11 2003  at 18h 35m 51s  UT
+ Mid time (julian date) :    52972.2732291666616220
+ 
+ Drifts: first 3 points (noise tube) not considered
+ Number of points without noise tube :          120
+ 
+ Offset cutting (IDL coordinates)    44  106
+ 
+ Offset linear fitting y_offset = a * t + b
+ 
+ Cal. file : /home/roos/mars/Nancay/data/map1/calib/map1_cal.table
+ 
+                    a           b       c.factor  d_c.factor 
+Channel 1:     2.842E-04   2.343E+01     0.9994    0.00603
+Channel 2:     4.056E-04   2.233E+01     0.9928    0.00594
+Channel 3:     2.486E-04   2.395E+01     1.0475    0.00654
+Channel 4:     3.690E-04   2.258E+01     1.0572    0.00615
+Channel 5:    -9.931E-05   2.202E+01     0.9852    0.00799
+Channel 6:     1.387E-04   2.272E+01     0.9984    0.00694
+Channel 7:    -1.683E-04   2.256E+01     1.0359    0.00841
+Channel 8:     8.268E-05   2.296E+01     1.0691    0.00734
+Channel 1+3:   0.000E+00   0.000E+00     1.0000    0.00000
+Channel 2+4:   0.000E+00   0.000E+00     1.0000    0.00000
+Channel 5+7:   0.000E+00   0.000E+00     1.0000    0.00000
+Channel 6+8:   0.000E+00   0.000E+00     1.0000    0.00000
+Channel 1-4:   0.000E+00   0.000E+00     1.0000    0.00000
+Channel 5-8:   0.000E+00   0.000E+00     1.0000    0.00000
+Channel 1-8:   0.000E+00   0.000E+00     1.0000    0.00000
+ 
+ 
+ Peak cutting (IDL coordinates)    50   63
+ 
+ Fit to the peaks is Gaussian:
+  a = height, t0 = center, w = width and c = constant level
+  Peak flux = a + c
+ 
+ 
+ Subtracted : /home/roos/mars/Nancay/data/map1/mars/f060341_f*.fits
+ Sky offset cutting + shift (IDL coordinates)    44  106    1
+ 
+ Comment : Bad data, even corrected not positive to id Mars
+ (CM,sub_lat,D) : ( 107.58,-25.98, 0.83025)
+ 
+ ch.    Flux   Noise    Noise    Noise       a        t0         w        c 
+               (peak)  (offset) (total)
+        (Jy)    (Jy)     (Jy)     (Jy)
+C_END
+ 1   0.04225  0.00940  0.01079  0.01048  6.417E-02 5.606E+01 5.973E+00-2.193E-02
+ 2   0.06153  0.01251  0.01703  0.01618  2.797E-01 5.630E+01 1.046E+01-2.181E-01
+ 3   0.03222  0.00847  0.01380  0.01290  1.393E-01 5.526E+01 1.915E+01-1.070E-01
+ 4   0.06537  0.00859  0.01390  0.01300  6.004E-01 5.617E+01 1.455E+01-5.350E-01
+ 5   0.08415  0.01337  0.03655  0.03329  3.844E-01 5.688E+01 1.329E+01-3.003E-01
+ 6   0.10146  0.02011  0.02140  0.02103  6.227E-02 5.515E+01 3.254E+00 3.920E-02
+ 7   0.08222  0.01190  0.03585  0.03258  5.493E-01 5.684E+01 1.883E+01-4.671E-01
+ 8   0.10454  0.01446  0.02423  0.02260  7.140E-01 5.606E+01 1.512E+01-6.095E-01

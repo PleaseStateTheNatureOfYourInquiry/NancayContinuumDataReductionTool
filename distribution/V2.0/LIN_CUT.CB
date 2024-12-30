@@ -1,0 +1,14 @@
+COMMON LIN_CUT_CB, $
+       gauss_parm, $           ; matrix with gaussian fit parameters 8 channels
+       noise_level_peak, $     ; vector with the noise level for the peak
+       noise_level_offset, $   ; vector with the noise level for the offset
+       noise_level_total, $    ; vector with combined noise level
+       offset_coefs, $         ; matrix with linear offset coefficients 8 chs
+       peak_flux, $            ; vector with the value of the peak fluxes
+       x_drift, $              ; vector with numbers 0 to n_points-3-1
+       x_drift_offset, $       ; vector with id's x_drift for selected offset
+       x_object, $             ; the time vector of the peak (object)
+       y_drift_corrected, $    ; observation - linear fit for 8 chs
+       y_peak_fit              ; the gaussian fit to the peak (object)
+
+

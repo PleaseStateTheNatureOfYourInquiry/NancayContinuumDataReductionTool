@@ -1,0 +1,9 @@
+COMMON LOAD_OBS_CB, $
+       average_done, $          ; 1 (0) if average switch was (not) used
+       cal_table_current_data, $; calibration table as in .res files
+       channel_files, $         ; vector names of current 8 channels fit files
+       data_path, $             ; file path of the last file loaded
+       file_base, $             ; base of the selected file
+       file_list, $             ; string vector with files names of current dir
+       n_obs, $                 ; no. of files in current directory
+       read_comment             ; the comment string

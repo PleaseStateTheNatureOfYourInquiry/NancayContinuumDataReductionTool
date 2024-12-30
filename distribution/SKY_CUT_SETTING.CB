@@ -1,0 +1,10 @@
+COMMON SKY_CUT_SETTING_CB, $
+       main_slider_track, $    ; 1 (0) if main slider is (not) followed
+       sky_drift_corrected, $  ; sky observation - linear fit for 15 chs
+       sky_file_previous, $    ; sky file written in the res file
+       sky_shift, $            ; the time shift to be applied to the sky
+       sky_t_offset_low, $     ; the time of the low limit sky offset cut 
+       sky_t_offset_low_res, $ ; time of low limit sky offset cut (res file) 
+       sky_t_offset_high, $    ; the time of the high limit sky offset cut 
+       sky_t_offset_high_res   ; time of high limit sky offset cut (res file)
+     

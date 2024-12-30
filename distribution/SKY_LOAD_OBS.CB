@@ -1,0 +1,4 @@
+COMMON SKY_LOAD_OBS_CB, $
+       sky_channel_files, $     ; vector names of current 8 channels fit files
+       sky_data_path, $         ; file path of the last file loaded
+       sky_file_base            ; base of the selected file

@@ -1,0 +1,27 @@
+COMMON WIDGET_IDS_CB,$
+       apply_calibration_short_cut, $ ; ID apply calibration short cut
+       averaging_switch, $     ; ID averaging switch
+       base, $                 ; ID base 
+       apply_lin_cut, $        ; ID apply linear cut
+       apply_qdr_cut, $        ; ID apply quadratic cut
+       calibration_tool, $     ; ID calibration tool
+       channel_select, $       ; ID channel select string
+       comment_string, $       ; ID of the comment string
+       current_res, $          ; ID current results information
+       file_info, $            ; ID current file information
+       load_obs, $             ; ID load new observation
+       next_obs, $             ; ID load next observation
+       previous_obs, $         ; ID load previous observation
+       print_plot, $           ; ID print current plots
+       process_info, $         ; ID process info
+       save_res, $             ; ID save current result
+       scissor_switch, $       ; ID scissor switch
+       show_help, $            ; ID show help
+       show_qdr_cut, $         ; ID show quadratic cut results
+       sky_subtract_tool, $    ; ID sky subtraction tool
+       slider_offset_high, $   ; ID slider high limit offset cut 
+       slider_offset_low, $    ; ID slider low limit offset cut 
+       slider_peak_high, $     ; ID slider high limit peak cut
+       slider_peak_low, $      ; ID slider low limit peak cut
+       write_result_2_ps, $    ; ID write result to postscript file standard
+       write_result_2_ps_name  ; ID write result to postscript file choose name

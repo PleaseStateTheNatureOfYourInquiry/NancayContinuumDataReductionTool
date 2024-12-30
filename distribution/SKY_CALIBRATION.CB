@@ -1,0 +1,3 @@
+COMMON SKY_CALIBRATION_CB,$
+       sky_apply_factors, $    ; vector with cal. factor for each channel
+       sky_apply_factors_error ; vector with errors in cal. factor for each ch.

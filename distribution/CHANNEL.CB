@@ -1,0 +1,16 @@
+COMMON CHANNEL_CB, $
+       central_freq, $         ; central frequency of the observation (MHz)
+       ch_address, $           ; if 0 then n_channel=8, if 8 then n_channel=7
+       channel_data, $         ; matrix with the data (16,n_points)
+       channel_data_ori, $     ; unprocessed copy of the data matrix
+       channel_include, $      ; string of channels to be included when saving
+       channel_include_save, $ ; backup of  channel_include  parameter
+       channel_print, $        ; name of the channel
+       julian_obs , $          ; julian date of the mid time of observation
+       n_channel, $            ; number of channels to be processed
+       n_scan_processed, $     ; number of scans processed in current session
+       n_points, $             ; number of points per channel
+       object, $               ; string (length 7) with object name
+       scan_number , $         ; string with the scan number in process
+       time_start , $          ; vector with end time of observation
+       time_end                ; vector with end time of observation

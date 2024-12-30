@@ -1,0 +1,12 @@
+COMMON WIDGET_IDS_CAL_CB,$
+       apply_calibration, $    ; ID apply calibration
+       cal_base, $             ; ID cal_base 
+       cal_process_info, $     ; ID calibration process information
+       create_cal_table, $     ; ID create calibration table
+       current_cal_table, $    ; ID current calibration table information
+       de_apply_calibration, $ ; ID de-apply calibration
+       delete_from_cal_table, $; ID delete from calibration table
+       dismiss_cal_tool, $     ; ID dismiss calibration tool
+       plot_calibration_data_ps, $ ; ID make .ps of calibration data
+       read_cal_table, $       ; ID read calibration table
+       write_2_cal_table       ; ID write to calibration table

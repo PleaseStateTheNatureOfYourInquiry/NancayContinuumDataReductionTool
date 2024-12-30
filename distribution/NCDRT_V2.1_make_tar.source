@@ -1,0 +1,19 @@
+/bin/rm NCDRT_V2.1.tar
+/bin/rm NCDRT_V2.1_distribution.tar.gz
+/bin/rm NCDRT_V2.1_demo.tar
+
+
+mv ./planet/planet.longitude ./planet/temp
+mv ./planet/planet.longitude_demo ./planet/planet.longitude
+
+tar cvf NCDRT_V2.1.tar *CB *pro *com  ./planet/planet.longitude
+
+mv ./planet/planet.longitude ./planet/planet.longitude_demo
+mv ./planet/temp ./planet/planet.longitude
+
+tar cvf NCDRT_V2.1_demo.tar ./demo/
+
+tar cvf NCDRT_V2.1_distribution.tar *V2.1*.tar *.txt
+
+gzip NCDRT_V2.1_distribution.tar
+

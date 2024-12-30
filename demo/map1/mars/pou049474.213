@@ -1,0 +1,46 @@
+
+ -------------------------------------------------------------------------------
+          SOU    19.213 --> Mars 28 aout 2003                                           
+          MAP     1.213 --> DR 21CM VH 2mn  1413.5   RMER -450 TTENTION UTILISE POUR JUP
+          SCAN: 49474
+
+ Coordonnees   2000  : asd=  22.63339     dec= -15.78933
+ Coordonnees reduites: asd=  22.63681     dec= -15.77002
+   Mouvements propres:mvpa= -0.000800    mvpd= -0.003300    mvpr=  0.000000
+ Angle de rotation du cornet au meridien=     -45.0 degres
+ Type de poursuite=DR
+ AH actuel=   -1.7 AHD min theorique=  -34.8 AHF max theorique=   34.8
+
+Positions actuelles:
+ X= -3881   Z=   796   Y=   149   R=-45.1   Xc= 1   Yc=   0   I=39711:39729   Ith=39689
+
+
+      Calcul de la poursuite de   2 cycle(s) sur  1 section(s) termine par:
+          -depassement du nombre de cycle impose
+
+          TU de debut de manip = 28/08/03  0:03:27.00   TS=22:35:27.52         
+          Duree de positionnement          0:11:38.00
+          TU de debut poursuite= 28/08/03  0:15:05.00   TS=22:47:07.43         
+          TU de pass.  meridien= 28/08/03  0:05:08.54   TS=22:37:09.33         
+          TU de fin poursuite  = 28/08/03  0:19:51.00   TS=22:51:54.21         
+
+          Cornet utilise=1
+
+ Cycle   1 Inclinaison 76874
+ ---------------------------
+  Per  TUrel.   Duree    Ahf    Xf    Zf  Yf  Rf   Ycf  Site   Azim.   Vdop.
+  ---  ------   -----    ---    --    --  --  --   ---  ----   -----   -----
+    1    0.00   15.04   10.2  12045    0    0 -45.0 300 26.852    2.758   -3.38
+    2   15.00  126.34   10.2  12047    1    0 -45.0 300 26.852    2.758   -3.48
+ Cycle   2 Inclinaison 76874
+ ---------------------------
+    3  141.00   19.05   12.7  14901   40    0 -45.0 300 26.830    3.411   -3.38
+    4  160.00  126.34   12.7  14903   41    0 -45.0 300 26.829    3.411   -3.47
+
+                    Duree (TU) totale de ralliement= 0:00:34.00
+                    Duree (TU) totale de tracking  = 0:04:11.99
+                    Duree (TU) totale de la manip  = 0:04:45.99
+                    Duree (TU) moyenne du cycle    = 0:02:22.99
+
+OK
+

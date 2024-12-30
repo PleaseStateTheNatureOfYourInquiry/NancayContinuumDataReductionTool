@@ -1,0 +1,6 @@
+COMMON LONGITUDE_CB, $
+       planet_longitude, $     ; 1 (0) if planet.longitude file (not) exists
+       scan_distance, $        ; vector with corresponding distance (AU)
+       scan_list, $            ; string vector with scan names
+       scan_longitude, $       ; vector with corresponding longitude values
+       scan_sublatitude        ; vector with corresponding sub_latitude values
