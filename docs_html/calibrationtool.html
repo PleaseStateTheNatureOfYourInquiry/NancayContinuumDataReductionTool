@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Calibration Tool &mdash; Nançay Continuum Data Reduction Tool  0.1 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/custom.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=2709fde1"></script>
+        <script src="_static/doctools.js?v=888ff710"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Sky Subtraction Tool" href="skysubtractiontool.html" />
+    <link rel="prev" title="Working with NCDRT" href="workingwithncdrt.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            Nançay Continuum Data Reduction Tool 
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="workingwithncdrt.html">Working with NCDRT</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Calibration Tool</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#text-windows-and-buttons">Text windows and buttons</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#create-new-calibration-table">Create New Calibration Table</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#read-existing-calibration-table">Read Existing Calibration Table</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#calibration-table-information-text-window">Calibration table information text window</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#write-to-calibration-table">Write To Calibration Table</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#delete-from-calibration-table">Delete From Calibration Table</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#calibration-process-information">Calibration process information</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#apply-current-calibration">Apply Current Calibration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#de-apply-current-calibration">De-apply Current Calibration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#dismiss">Dismiss</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#explanation-on-the-calibration-plot-window">Explanation on the calibration plot window</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="skysubtractiontool.html">Sky Subtraction Tool</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ncdrtdetails.html">Some details working with NCDRT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="demodata.html">Demonstration data from project Mars P3B01</a></li>
+<li class="toctree-l1"><a class="reference internal" href="disclaimer.html">Disclaimer</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Nançay Continuum Data Reduction Tool </a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Calibration Tool</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/calibrationtool.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="calibration-tool">
+<span id="calibrationtool"></span><h1>Calibration Tool<a class="headerlink" href="#calibration-tool" title="Link to this heading"></a></h1>
+<p>The calibration tool allows  to create and change calibration tables,
+as well as  apply or de-apply calibration parameters  to data.  NCDRT
+must be  in the eight  channel mode (no  averaging) for this  tool to
+work properly.</p>
+<section id="text-windows-and-buttons">
+<h2>Text windows and buttons<a class="headerlink" href="#text-windows-and-buttons" title="Link to this heading"></a></h2>
+<section id="create-new-calibration-table">
+<h3>Create New Calibration Table<a class="headerlink" href="#create-new-calibration-table" title="Link to this heading"></a></h3>
+<p><code class="file docutils literal notranslate"><span class="pre">calibration_display_event.pro</span></code></p>
+<p>Create a  new calibration table and  write it to  the file selected
+with the pick file dialog widget. Any file name can be given.</p>
+</section>
+<section id="read-existing-calibration-table">
+<h3>Read Existing Calibration Table<a class="headerlink" href="#read-existing-calibration-table" title="Link to this heading"></a></h3>
+<p><code class="file docutils literal notranslate"><span class="pre">read_cal_table.pro</span></code></p>
+<p>Read  an existing calibration  table. The  pick file  dialog widget
+allows to chose the file. NCDRT checks if the file is a calibration
+table or not.</p>
+</section>
+<section id="calibration-table-information-text-window">
+<h3>Calibration table information text window<a class="headerlink" href="#calibration-table-information-text-window" title="Link to this heading"></a></h3>
+<p>This  window contains  the information  about the  currently loaded
+calibration table.</p>
+</section>
+<section id="write-to-calibration-table">
+<h3>Write To Calibration Table<a class="headerlink" href="#write-to-calibration-table" title="Link to this heading"></a></h3>
+<p><code class="file docutils literal notranslate"><span class="pre">write_2_cal_table.pro</span></code></p>
+<p>This is  the routine  which does the  actual calibration.  The user
+must program  the calibrators and  frequencies. At the  time of
+writing,  three  calibrators  are  included, with  the  frequencies
+corresponding to  the maps  1 -  6 of the  P3B01 Mars  project. The
+routine uses the frequency read  by load_obs.pro in the pou file to
+identify the frequency set to use (parameter central_freq). It next
+checks  the name  of the  object (parameter  object), also  read by
+<code class="file docutils literal notranslate"><span class="pre">load_obs.pro</span></code>  from   the  <code class="file docutils literal notranslate"><span class="pre">pou</span></code>   file.  If  it   does  not   find  a
+correspondance   between   the  object   name   and  the   included
+calibrators, it will notify that no calibrator was found.</p>
+<p>The  absolute fluxes  for  the three  calibrators included  (3C123,
+3C161  and 3C295)  are taken  from  <a class="reference external" href="https://articles.adsabs.harvard.edu/pdf/1994A%26A...284..331O">Ott et al. (A&amp;A  284, 331-339,
+1994, Table 5)</a>.</p>
+<p>Once the absolute fluxes  are calculated, the routine compares them
+to  the  measured  fluxes  from the  calibrator  observation.   The
+calibration factor  for each  channel is determined  (including the
+error, which  is the  total error, see  section 5.1), also  for the
+averaging  channels.  It  is  assumed that  the  calibrator is  non
+polarised,  so that every  channels corresponds  to half  the total
+flux (in fact, the total flux  is what is written in these channels
+by NAPS).</p>
+<p>The results of this exercise  are written to the calibration table.
+They  are  also  plotted   in  the  calibration  plot  window  (see
+calibration plot window for explanation).</p>
+<p>Here  the channel select  string is  taken into  account !  You can
+select the good and bad channels for your calibrator.</p>
+</section>
+<section id="delete-from-calibration-table">
+<h3>Delete From Calibration Table<a class="headerlink" href="#delete-from-calibration-table" title="Link to this heading"></a></h3>
+<p><code class="file docutils literal notranslate"><span class="pre">delete_from_cal_table.pro</span></code></p>
+<p>Delete  the current calibrator  from the  calibration table,  if it
+exists in the table.</p>
+<p>Create <code class="file docutils literal notranslate"><span class="pre">.ps</span></code> Of Calibration Table: calibration_display_event.pro
+Create a postscript  file of the calibration table  data.  The file
+name  of  the  postscript  file  will  be  the  file  name  of  the
+calibration table followed by <code class="file docutils literal notranslate"><span class="pre">.ps</span></code>.</p>
+</section>
+<section id="calibration-process-information">
+<h3>Calibration process information<a class="headerlink" href="#calibration-process-information" title="Link to this heading"></a></h3>
+<p>This window contains information (warnings etc.) about the current
+process.</p>
+</section>
+<section id="apply-current-calibration">
+<h3>Apply Current Calibration<a class="headerlink" href="#apply-current-calibration" title="Link to this heading"></a></h3>
+<p><code class="file docutils literal notranslate"><span class="pre">apply_calibration.pro</span></code></p>
+<p>Apply the  calibration factors of the current  calibration table to
+the  current  data.  Each  channel  is  multiplied  by the  set  of
+calibration factors (8+4 channels)  from the calibration table that
+is  closest  in time  to  the  current  observation.  This  can  be
+different  for different channels,  as not  all channels  will have
+good  calibration data  for each  observation!
+In  this version, nothing is done with the calibration factor error.</p>
+</section>
+<section id="de-apply-current-calibration">
+<h3>De-apply Current Calibration<a class="headerlink" href="#de-apply-current-calibration" title="Link to this heading"></a></h3>
+<p><code class="file docutils literal notranslate"><span class="pre">calibration_display_event.pro</span></code></p>
+<p>De-apply any calibration of the  current data. In fact, the current
+data is restored to  its initial values (copy from <code class="code docutils literal notranslate"><span class="pre">channel_data_ori</span></code>
+to the <code class="code docutils literal notranslate"><span class="pre">channel_data</span> <span class="pre">parameter</span></code>).</p>
+</section>
+<section id="dismiss">
+<h3>Dismiss<a class="headerlink" href="#dismiss" title="Link to this heading"></a></h3>
+<p><code class="file docutils literal notranslate"><span class="pre">calibration_display_event.pro</span></code></p>
+<p>Dismiss the calibration tool, and  kill the plot window if any.  If
+any calibration  table was loaded,  this table will stay  loaded in
+NCDRT.</p>
+</section>
+</section>
+<section id="explanation-on-the-calibration-plot-window">
+<h2>Explanation on the calibration plot window<a class="headerlink" href="#explanation-on-the-calibration-plot-window" title="Link to this heading"></a></h2>
+<p>In this window  the calibration factors for each  channel as from the
+current calibration  table are plotted  and updated if any  action is
+taken (new calibration data  or deleting of calibration data).  There
+are 8 sets of 2 frames.  These correspond to the eight channels.  The
+top  frame of each  set shows  the entire  calibration data  for that
+channel, the lower frame shows a  detail of that data only around the
+time of the current observation. A dotted vertical line indicates the
+position of the current observation time.  If this time is out of the
+calibrator table range, the whole  set is also plotted in the smaller
+frame.</p>
+<p>In the  first seven sets, the  dashed line correspond  to the average
+channels (9-15).</p>
+<p>A cross  means that the channel  was not selected  for the particular
+time.</p>
+<p>If a  new data file is  loaded, while the calibration  tool is active
+with calibration  table loaded, then  the calibration plot  window is
+updated to show the time of the current observation.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="workingwithncdrt.html" class="btn btn-neutral float-left" title="Working with NCDRT" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="skysubtractiontool.html" class="btn btn-neutral float-right" title="Sky Subtraction Tool" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright .
+      <span class="lastupdated">Last updated on Dec 31, 2024, 12:04:09 PM.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

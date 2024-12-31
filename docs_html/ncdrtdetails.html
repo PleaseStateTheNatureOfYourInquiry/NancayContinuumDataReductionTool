@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Some details working with NCDRT &mdash; Nançay Continuum Data Reduction Tool  0.1 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/custom.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=2709fde1"></script>
+        <script src="_static/doctools.js?v=888ff710"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Demonstration data from project Mars P3B01" href="demodata.html" />
+    <link rel="prev" title="Sky Subtraction Tool" href="skysubtractiontool.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            Nançay Continuum Data Reduction Tool 
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="workingwithncdrt.html">Working with NCDRT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="calibrationtool.html">Calibration Tool</a></li>
+<li class="toctree-l1"><a class="reference internal" href="skysubtractiontool.html">Sky Subtraction Tool</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Some details working with NCDRT</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#show-lin-cut-and-apply-lin-cut">SHOW_LIN_CUT and APPLY_LIN_CUT</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="demodata.html">Demonstration data from project Mars P3B01</a></li>
+<li class="toctree-l1"><a class="reference internal" href="disclaimer.html">Disclaimer</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Nançay Continuum Data Reduction Tool </a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Some details working with NCDRT</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/ncdrtdetails.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="some-details-working-with-ncdrt">
+<span id="ncdrtdetails"></span><h1>Some details working with NCDRT<a class="headerlink" href="#some-details-working-with-ncdrt" title="Link to this heading"></a></h1>
+<p>The source files are all human readable files. All the programmes are
+.pro files. The .CB files  are the Common Blocks.  The ncdrt_v1.0.pro
+file contains the  first version of NCDRT, which  is quite primitive.
+NCDRT uses the READFITS.PRO routine from the IDL astro routines.
+This routine was found at the time of development of this application at URL <em>idlastro.gsfc.nasa.gov/homepage.html</em>,
+which does not exist anymore.
+A search gives this <a class="reference external" href="https://github.com/wlandsman/IDLAstro/tree/master">IDL Astro GitHub repository</a>.</p>
+<p>The (old) routine is included in this distribution of NCDRT.</p>
+<section id="show-lin-cut-and-apply-lin-cut">
+<h2>SHOW_LIN_CUT and APPLY_LIN_CUT<a class="headerlink" href="#show-lin-cut-and-apply-lin-cut" title="Link to this heading"></a></h2>
+<p>A NRT drift scan is a measure  of the flux as a function of time. The
+first three seconds  of the scan are used  to observe the calibration
+noise tube.  NCDRT ignores these  first three items.  The rest of the
+scan sees the  system noise and the source, as  it drifts through the
+field of view  of the system. In order to  measure the source’s flux,
+the  system noise needs  to be  subtracted. It  is assumed  that this
+noise, the offset, is a line as a function of time.</p>
+<p>The offset <a class="reference internal" href="workingwithncdrt.html#sliders"><span class="std std-ref">sliders</span></a> determine which part of the scan
+is  used for  the  offset line  determination.  This is  from <code class="code docutils literal notranslate"><span class="pre">t=1</span></code>  to
+<code class="code docutils literal notranslate"><span class="pre">t=offset_low</span></code> plus <code class="code docutils literal notranslate"><span class="pre">t=offset_high</span></code> to  <code class="code docutils literal notranslate"><span class="pre">t=end_scan</span></code>. The offset limits are
+defined  and  the  same  for  all  the channels.  The  line  is  then
+subtracted from the whole scan.  Now the peak value of the object can
+be measured.</p>
+<p>The offset sliders determine the part  of the data to be used for the
+determination  of the offset.   There is  a build-in  protection that
+prevents  these sliders  from having  inappropriate values:  the peak
+sliders  must  be at  least  4 time  units  apart  for the  curve_fit
+procedure  in the  <code class="file docutils literal notranslate"><span class="pre">apply_lin_cut.pro</span></code>  routine to  work,  and the  low
+offset  slider cannot  be larger  than the  high offset  slider.  low
+sliders cannot be  set to more than half the  range, Also, the offset
+sliders cannot  be set  to 0 or  to the  maximum of points.   This is
+checked  in  the   <code class="file docutils literal notranslate"><span class="pre">show_lin_cut.pro</span></code>  routine.   The  <code class="file docutils literal notranslate"><span class="pre">show_lin_cut.pro</span></code>
+routine then plots the first channel (by default, this can be changed
+by  the  user), corrected  by  the offset,  in  a  small plot  window
+(scissors) and shows the offset lines.</p>
+<p>The peak  sliders determine which part of  the scan is to  be used to
+fit the peak of the object. This is also plotted in the scissors-plot
+by <code class="file docutils literal notranslate"><span class="pre">show_lin_cut.pro</span></code>.</p>
+<p>The  routine  <code class="file docutils literal notranslate"><span class="pre">apply_lin_cut.pro</span></code>  fits  a  gaussian  function  to  the
+selected  peak.   It  uses  the  IDL routine  GAUSSFIT  with  initial
+estimates of the four parameters <span class="math notranslate nohighlight">\(a(0), a(1), a(2), a(3)\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[f(x) = a (0) * \exp { \frac {-z^2}{2} } + a (3)\]</div>
+<p>with</p>
+<div class="math notranslate nohighlight">
+\[z = \frac{ x- a (1) }{ a (2) }\]</div>
+<p>The results  are shown in  the result plot  window and in  the result
+text box in  the right hand colomn of the NCDRT  widget.  The flux at
+the peak is</p>
+<div class="math notranslate nohighlight">
+\[a (0) + a (3)\]</div>
+<p>Three estimates of the noise level are calculated and reported:</p>
+<ol class="arabic simple">
+<li><p>standard deviation  of the (peak  - gaussian fit) for  the peak selection of the scan only;</p></li>
+<li><p>standard deviation  of the (scan - offset_line)  for the offset selection of the scan only;</p></li>
+<li><p>standard deviation of the combination of (1) and (2).</p></li>
+</ol>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="skysubtractiontool.html" class="btn btn-neutral float-left" title="Sky Subtraction Tool" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="demodata.html" class="btn btn-neutral float-right" title="Demonstration data from project Mars P3B01" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright .
+      <span class="lastupdated">Last updated on Dec 31, 2024, 12:04:09 PM.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

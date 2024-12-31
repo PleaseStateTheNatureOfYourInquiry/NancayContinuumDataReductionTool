@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Working with NCDRT &mdash; Nançay Continuum Data Reduction Tool  0.1 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/custom.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=2709fde1"></script>
+        <script src="_static/doctools.js?v=888ff710"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Calibration Tool" href="calibrationtool.html" />
+    <link rel="prev" title="Introduction" href="introduction.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            Nançay Continuum Data Reduction Tool 
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Working with NCDRT</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#preparing-for-using-ncdrt">Preparing for using NCDRT</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#starting-ncdrt">Starting NCDRT</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#text-windows-and-buttons">Text windows and buttons</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#load-data-file">Load Data File</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#scissor-switch">Scissor Switch</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#load-next-data-file">Load Next Data File</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#load-previous-data-file">Load Previous Data File</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#averaging-switch">Averaging Switch</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#observation-information-window">Observation information window</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#process-information-window">Process information window</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ncdrt-calibration-tool">NCDRT Calibration Tool</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#apply-calibration-short-cut">Apply Calibration (Short Cut)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#save-result">Save Result</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#sliders">Sliders</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#information-text-window">Information Text Window</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#channel-select-string">Channel Select String</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#quit">Quit</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#the-planet-longitude-file">The planet.longitude file</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="calibrationtool.html">Calibration Tool</a></li>
+<li class="toctree-l1"><a class="reference internal" href="skysubtractiontool.html">Sky Subtraction Tool</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ncdrtdetails.html">Some details working with NCDRT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="demodata.html">Demonstration data from project Mars P3B01</a></li>
+<li class="toctree-l1"><a class="reference internal" href="disclaimer.html">Disclaimer</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Nançay Continuum Data Reduction Tool </a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Working with NCDRT</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/workingwithncdrt.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="working-with-ncdrt">
+<span id="workingwithncdrt"></span><h1>Working with NCDRT<a class="headerlink" href="#working-with-ncdrt" title="Link to this heading"></a></h1>
+<section id="preparing-for-using-ncdrt">
+<h2>Preparing for using NCDRT<a class="headerlink" href="#preparing-for-using-ncdrt" title="Link to this heading"></a></h2>
+<p>Data from the NRT come in four files with the following structure:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fil050673</span><span class="mf">.213</span>
+<span class="n">pou050673</span><span class="mf">.213</span>
+<span class="n">log050673</span><span class="mf">.213</span>
+<span class="n">sfr050673</span><span class="mf">.213</span>
+</pre></div>
+</div>
+<p><code class="file docutils literal notranslate"><span class="pre">050673</span></code> is  the observation id, <code class="file docutils literal notranslate"><span class="pre">213</span></code>  is the observer id.
+The data are stored  in the <code class="file docutils literal notranslate"><span class="pre">fil</span></code> file. The  <code class="file docutils literal notranslate"><span class="pre">pou</span></code> file  contains information  on the
+observation setup. The <code class="file docutils literal notranslate"><span class="pre">log</span></code> file contains a log of the observations.</p>
+<p>The programme NAPS,  developed  by the NRT-team,  must  be used  to preprocess the  data.
+NCDRT uses  fits files.
+NAPS can  transform the initial NRT data to fits format.</p>
+<p>In order to  use NCDRT correctly, the fits files must  be in the same
+directory as the  original data files. In order  to achieve this, set
+the directory to write the fits files in NAPS:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">NAPS</span><span class="o">&gt;</span> <span class="nb">set</span> <span class="n">result</span> <span class="n">fits</span>
+<span class="n">NAPS</span><span class="o">&gt;</span> <span class="nb">set</span> <span class="n">dirdata</span> <span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">your_name</span><span class="o">/</span><span class="n">ncdrt</span><span class="o">/</span><span class="n">data</span><span class="o">/</span>
+<span class="n">NAPS</span><span class="o">&gt;</span> <span class="nb">set</span> <span class="n">dirfits</span> <span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">your_name</span><span class="o">/</span><span class="n">ncdrt</span><span class="o">/</span><span class="n">data</span><span class="o">/</span>
+</pre></div>
+</div>
+<p>With the NAPS  save command NRT data read into NAPS  is saved to fits
+files with the following file  format, averaging over the cylces, one
+fits file for each of the eight channels:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">f050673_f1</span><span class="o">.</span><span class="n">fits</span>
+<span class="n">f050673_f2</span><span class="o">.</span><span class="n">fits</span>
+<span class="n">f050673_f3</span><span class="o">.</span><span class="n">fits</span>
+         <span class="o">.</span>
+         <span class="o">.</span>
+<span class="n">f050673_f8</span><span class="o">.</span><span class="n">fits</span>
+</pre></div>
+</div>
+</section>
+<section id="starting-ncdrt">
+<h2>Starting NCDRT<a class="headerlink" href="#starting-ncdrt" title="Link to this heading"></a></h2>
+<p>Once the  data has been transformed  into fits files,  NCDRT can read
+them.  Start a new session of IDL and type</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">idl</span><span class="o">&gt;</span> <span class="nd">@ncdrt</span><span class="o">.</span><span class="n">com</span>
+</pre></div>
+</div>
+<p>to compile the programme files.</p>
+<p>Then type</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">idl</span><span class="o">&gt;</span> <span class="n">ncdrt</span>
+</pre></div>
+</div>
+<p>to start NCDRT.</p>
+</section>
+<section id="text-windows-and-buttons">
+<h2>Text windows and buttons<a class="headerlink" href="#text-windows-and-buttons" title="Link to this heading"></a></h2>
+<p>The NCDRT  main interaction widget has several buttons, sliders and
+information windows, which are now described.</p>
+<p>Description of  the left column of  the widget and  going through the
+rows from top to bottom:</p>
+<section id="load-data-file">
+<span id="loaddatafile"></span><h3>Load Data File<a class="headerlink" href="#load-data-file" title="Link to this heading"></a></h3>
+<p><code class="file docutils literal notranslate"><span class="pre">load_obs.pro</span></code>  with  switch  <code class="code docutils literal notranslate"><span class="pre">next_obs</span> <span class="pre">=</span> <span class="pre">0</span></code>.</p>
+<p>A pick file dialog widget pops up.
+The files listed by this widget are the <code class="file docutils literal notranslate"><span class="pre">f*_f1.fits</span></code> files present in the directory.
+Select a file to load the data into NCDRT.</p>
+<p>The eight channels are loaded and stored.
+Seven average channels are being calculated and stored as channels 9-15.
+Default is:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">channel</span>  <span class="mi">9</span> <span class="o">=</span> <span class="p">(</span><span class="n">channel</span> <span class="mi">1</span> <span class="o">+</span> <span class="n">channel</span> <span class="mi">3</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span>
+<span class="n">channel</span> <span class="mi">10</span> <span class="o">=</span> <span class="p">(</span><span class="n">channel</span> <span class="mi">2</span> <span class="o">+</span> <span class="n">channel</span> <span class="mi">4</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span>
+<span class="n">channel</span> <span class="mi">11</span> <span class="o">=</span> <span class="p">(</span><span class="n">channel</span> <span class="mi">5</span> <span class="o">+</span> <span class="n">channel</span> <span class="mi">7</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span>
+<span class="n">channel</span> <span class="mi">12</span> <span class="o">=</span> <span class="p">(</span><span class="n">channel</span> <span class="mi">6</span> <span class="o">+</span> <span class="n">channel</span> <span class="mi">8</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span>
+<span class="n">channel</span> <span class="mi">13</span> <span class="o">=</span> <span class="p">(</span><span class="n">channel</span> <span class="mi">1</span> <span class="n">to</span> <span class="n">channel</span> <span class="mi">4</span><span class="p">)</span> <span class="o">/</span> <span class="mi">4</span>
+<span class="n">channel</span> <span class="mi">14</span> <span class="o">=</span> <span class="p">(</span><span class="n">channel</span> <span class="mi">5</span> <span class="n">to</span> <span class="n">channel</span> <span class="mi">8</span><span class="p">)</span> <span class="o">/</span> <span class="mi">4</span>
+<span class="n">channel</span> <span class="mi">15</span> <span class="o">=</span> <span class="p">(</span><span class="n">channel</span> <span class="mi">1</span> <span class="n">to</span> <span class="n">channel</span> <span class="mi">8</span><span class="p">)</span> <span class="o">/</span> <span class="mi">8</span>
+</pre></div>
+</div>
+<p>This can  of course  be changed  by the user.   In this  case, also
+change the naming of the channels stored in parameter channel_print
+and  defined  in  <code class="file docutils literal notranslate"><span class="pre">ncdrt_display.pro</span></code>.
+Average  channel  calibration needs also to be redefined in the <code class="file docutils literal notranslate"><span class="pre">routine</span> <span class="pre">write_2_cal_table.pro</span></code>,
+as well as  the automatic (de-)selection of averaging  channels if the</p>
+<p><code class="code docutils literal notranslate"><span class="pre">Averaging</span> <span class="pre">Switch</span></code> (see description of this switch) is pressed for to
+change  from normal to  average mode  in the  current observation’s
+process  (<code class="file docutils literal notranslate"><span class="pre">ncdrt_display_event.pro</span></code>).
+The <code class="file docutils literal notranslate"><span class="pre">sky_load_obs.pro</span></code> routine also needs to be adapted.</p>
+<p>Search for the  USER: AVERAGING   keyword in these programme files.</p>
+<p>Whenever a fits  file is loaded, the fits file  list of the current
+directory is  determined and stored in  NCDRT. This is  used in the
+Load Next Data File and  Load Previous Data File actions (see below
+for description).</p>
+<p>Information  on the  current data  is read  from the  pou  file and
+displayed in the first text window.  This is why it is mandatory to
+have these files in the same directory as the fits files.</p>
+<p>load_obs.pro  will also  search for  the presence  of  result files
+produced previously. If it finds such  a file, it will read and set
+the  slider settings  from it.  The order  of priority  is  <code class="file docutils literal notranslate"><span class="pre">.res_cal</span></code>
+<code class="file docutils literal notranslate"><span class="pre">.res_av_cal</span></code>, <code class="file docutils literal notranslate"><span class="pre">.res</span></code> <code class="file docutils literal notranslate"><span class="pre">.res_av</span></code> (see  Save Result).  The routines involved
+are  read_res.pro and read_res_av.pro  In case  there is  no result
+file, NCDRT will define standard settings for the sliders.</p>
+<p>After  loading the  data and  setting  the sliders,  the result  is
+determined by  calling <code class="file docutils literal notranslate"><span class="pre">show_lin_cut.pro</span></code> and  <code class="file docutils literal notranslate"><span class="pre">apply_lin_cut.pro</span></code>
+(see section 5.1 on the working of these routines).</p>
+<p>The  results are  shown on  the  plots (scissors  and results)  and
+written to the large text window in the right column.</p>
+<p>The <code class="code docutils literal notranslate"><span class="pre">n_channel</span></code>  and <code class="code docutils literal notranslate"><span class="pre">ch_address</span></code>  are kept as  they are.   For the
+first file of a new session, they are set to</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">n_channel</span> <span class="o">=</span> <span class="mi">8</span>
+<span class="n">ch_address</span> <span class="o">=</span> <span class="mi">0</span>
+</pre></div>
+</div>
+<p>This means that the first eight channels are being processed.</p>
+</section>
+<section id="scissor-switch">
+<span id="scissorswitch"></span><h3>Scissor Switch<a class="headerlink" href="#scissor-switch" title="Link to this heading"></a></h3>
+<p><code class="file docutils literal notranslate"><span class="pre">show_lin_cut.pro</span></code>  with switch <code class="code docutils literal notranslate"><span class="pre">scissor</span></code>.</p>
+<p>This function changes the scissor window between the normal mode and
+the detailed  mode. The normal mode  shows the entire  drift and the
+current  cutting settings. The  detailed mode  devides the  drift in
+three  parts, the  offset  (left  and right)  and  the central  part
+(peak).  This is useful  is the  contrast between  the peak  and the
+offset is large.</p>
+</section>
+<section id="load-next-data-file">
+<span id="loadnextdatafile"></span><h3>Load Next Data File<a class="headerlink" href="#load-next-data-file" title="Link to this heading"></a></h3>
+<p><code class="file docutils literal notranslate"><span class="pre">load_obs.pro</span></code>  with  switch  <code class="code docutils literal notranslate"><span class="pre">next_obs</span> <span class="pre">=</span> <span class="pre">1</span></code>.</p>
+<p>Loads the next  data file in the current  directory.  In case there
+are  no more  files,  the  pick file  dialog  widget appears.   The
+settings of the sliders are not changed.</p>
+</section>
+<section id="load-previous-data-file">
+<span id="loadpreviousdatafile"></span><h3>Load Previous Data File<a class="headerlink" href="#load-previous-data-file" title="Link to this heading"></a></h3>
+<p><code class="file docutils literal notranslate"><span class="pre">load_obs.pro</span></code>  with  switch  <code class="code docutils literal notranslate"><span class="pre">next_obs</span> <span class="pre">=</span> <span class="pre">-1</span></code>.</p>
+<p>Loads the previous data file in the current directory. If there are
+no  previous  files, the  pick  file  dialog  widget appears.   The
+settings of the sliders are not changed.</p>
+</section>
+<section id="averaging-switch">
+<span id="averagingswitch"></span><h3>Averaging Switch<a class="headerlink" href="#averaging-switch" title="Link to this heading"></a></h3>
+<p><code class="file docutils literal notranslate"><span class="pre">ncdrt_display_event.pro</span></code>  switches  <code class="code docutils literal notranslate"><span class="pre">n_channel</span></code> and <code class="code docutils literal notranslate"><span class="pre">ch_address</span></code>.</p>
+<p>The  <code class="code docutils literal notranslate"><span class="pre">n_channel</span></code> and <code class="code docutils literal notranslate"><span class="pre">ch_address</span></code>  switches are  changed to  their
+other values. The possible values for these switches are</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="n">n_channel</span><span class="p">,</span><span class="n">ch_address</span><span class="p">)</span>  <span class="o">=</span> <span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>  <span class="ow">or</span>  <span class="p">(</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The  first set  means  that  the first  eight  channels are  being
+processed,  the  second  set  is  for the  last  seven  (averaging
+channels).</p>
+<p>Upon changing  from normal to averaging the  channel select string
+information  of  the normal  setting  is  kept.   Also an  average
+channel is automatically deselected  if one of the normal channels
+that are included in this average channel are deselected.</p>
+</section>
+<section id="observation-information-window">
+<h3>Observation information window<a class="headerlink" href="#observation-information-window" title="Link to this heading"></a></h3>
+<p>Shows  information (name,  time, etc.)  of the  current observation loaded into NCDRT.</p>
+</section>
+<section id="process-information-window">
+<h3>Process information window<a class="headerlink" href="#process-information-window" title="Link to this heading"></a></h3>
+<p>Shows information (warnings etc.) of the current process.</p>
+</section>
+<section id="ncdrt-calibration-tool">
+<h3>NCDRT Calibration Tool<a class="headerlink" href="#ncdrt-calibration-tool" title="Link to this heading"></a></h3>
+<p><code class="file docutils literal notranslate"><span class="pre">calibration_display.pro</span></code>  and associated routines.</p>
+<p>Invokes the calibration tool. See <a class="reference internal" href="calibrationtool.html#calibrationtool"><span class="std std-ref">Calibration Tool</span></a> for a detailed description.</p>
+<p>Create <code class="file docutils literal notranslate"><span class="pre">.ps</span></code>  Of Result (Standard): <code class="file docutils literal notranslate"><span class="pre">write_result_2_ps.pro</span></code>.</p>
+<p>This creates a standard postscript file of the current result, like
+in Save  Result (see above). The  postscript file is  named like in
+Save Result, with the extention .ps to it.</p>
+<p>Only  those channels are  selected which  have a  1 in  the channel
+select string.   In this way, you  can for example  output just the
+result of 1 channel at wish.</p>
+<p>The slider  settings are indicated  in the plot by  dotted (offset)
+and dashed (peak) lines.</p>
+<p>Other information  is also written in  the plot. From  the pou file
+come the indications  of the frequency and the  name of the object.
+The indication (cal) (or (not cal)) after the ‘peak flux’ string in
+the plot indicate that the data were calibrated (or not calibrated)
+with a calibration table.</p>
+<p>Create .ps  Of Result (Choose Name): write_result_2_ps.pro
+Same as  previous button, but  now you can  choose the name  of the
+result file.</p>
+</section>
+<section id="apply-calibration-short-cut">
+<h3>Apply Calibration (Short Cut)<a class="headerlink" href="#apply-calibration-short-cut" title="Link to this heading"></a></h3>
+<p><code class="file docutils literal notranslate"><span class="pre">apply_calibration.pro</span></code></p>
+<p>Using this button the  calibration of the current calibration table
+is applied to the data without having to go to the Calibration Tool
+Widget.   It  is  the  same  as Apply  Calibration  button  of  the
+Calibration  Tool.    The  function  will  only  be   active  if  a
+calibration  table  is present.   This  and  all other  calibration
+functions have to be performed with the Calibration Tool.</p>
+<p>Comment Text  Window:
+This window is  an editable window.  It allows the  user to write a
+maximum of 40 characters long comment line. The line is included in
+the result file when the  ‘Save Result’ buttom is pressed, preceded
+by the word ‘ Comment : ‘.  By using the grep and awk function in a
+UNIX operating system  on all the existing result  files a log file
+of all the comments can easily be made.</p>
+</section>
+<section id="save-result">
+<span id="saveresults"></span><h3>Save Result<a class="headerlink" href="#save-result" title="Link to this heading"></a></h3>
+<p><code class="file docutils literal notranslate"><span class="pre">save_res.pro</span></code></p>
+<p>Save the current result to a  standard file. There are four types of
+result files, depending on the status of the process:</p>
+<blockquote>
+<div><p>f050673.res, first 8 channels with no calibration applied
+f050673.res_av, averaging channels with no calibration applied
+f050673.res_cal, first 8 channels with calibration applied
+f050673.res_av, averaging channels with calibration applied</p>
+</div></blockquote>
+<p>Do never  change the  structure of these  files. NCDRT will  not be
+able to read them afterwards.</p>
+</section>
+<section id="sliders">
+<span id="id1"></span><h3>Sliders<a class="headerlink" href="#sliders" title="Link to this heading"></a></h3>
+<p><code class="file docutils literal notranslate"><span class="pre">ncdrt_display_event.pro</span></code>  and  <code class="file docutils literal notranslate"><span class="pre">show_lin_cut.pro</span></code></p>
+<p>There are four sliders:</p>
+<div class="line-block">
+<div class="line">Offset Low</div>
+<div class="line">Offset High</div>
+<div class="line">Peak Low</div>
+<div class="line">Peak High</div>
+</div>
+<p>The offset  sliders determine the part  of the data to  be used for
+the determination  of the offset.   There is a  build-in protection
+that prevents  these sliders from having  inappropriate values: the
+peak sliders must be at least  4 time units apart for the curve_fit
+procedure  in the apply_lin_cut.pro  routine to  work, and  the low
+offset slider  cannot be larger  than the high offset  slider.  low
+sliders cannot be set to more than half the range, Also, the offset
+sliders cannot  be set to 0 or  to the maximum of  points.  This is
+checked in  show_lin_cut.pro .  See section 5.1  for further detail
+on the working of show_lin_cut.pro and apply_lin_cut.pro .</p>
+<p>The result of the cutting can  be seen in the Scissors plot window.
+They change dynamically as the  slider values are changed. See also
+the explanation of the <a class="reference internal" href="#scissorswitch"><span class="std std-ref">Scissor Switch</span></a> section.</p>
+</section>
+<section id="information-text-window">
+<h3>Information Text Window<a class="headerlink" href="#information-text-window" title="Link to this heading"></a></h3>
+<p>This window shows the result of the current fit to the data. It are
+the values  which will be written to  a file if you  press the Save
+Result button. See  section 5.1 for more details  on the meaning of
+the numbers.</p>
+</section>
+<section id="channel-select-string">
+<h3>Channel Select String<a class="headerlink" href="#channel-select-string" title="Link to this heading"></a></h3>
+<p>The last text window in the right hand column contains the editable
+channel select  string. A  ‘1’ means that  the selected  channel is
+processed  and  written to  the  result  file,  if this  action  is
+required.  A ‘0’ means that the channels is ignored. In the case of
+processing  the  fours  averaging  channels, only  the  first  four
+switches of the channels select string are taken into account.  The
+use of the Averaging Switch resets the channel select string to all
+default values (all ‘1’).</p>
+</section>
+<section id="quit">
+<h3>Quit<a class="headerlink" href="#quit" title="Link to this heading"></a></h3>
+<p><code class="file docutils literal notranslate"><span class="pre">ncdrt_display_event.pro</span></code></p>
+<p>Quit NCDRT and close all the windows.</p>
+</section>
+</section>
+<section id="the-planet-longitude-file">
+<h2>The planet.longitude file<a class="headerlink" href="#the-planet-longitude-file" title="Link to this heading"></a></h2>
+<p>NCDRT will search for a  file named planet.longitude in the directory
+<code class="file docutils literal notranslate"><span class="pre">/home/your_name/idlproc/NCDRT/planet</span></code>. This  file contains a list of
+the scan  numbers (preceded by the  letter ‘f’, and  without the user
+id),  and the  Central  Meridian Longitude,  Sub  Earth Latitude  and
+Distance to the Earth (AU) of  the planet that the user has observed.
+The user must  create this file. It is  read in the ncdrt_display.pro
+routine (near the end). The  user can change the filename, place, and
+formatting at  wish. The  format of the  file must correspond  to the
+format of the reading.</p>
+<p>If  an observation  of the  planet is  reduced and  a result  file is
+saved, and if that file  is listed in the planet.longitude file, then
+an information  line is  written just below  the comment line  in the
+result file.  If the file is  not found, or if the observation is not
+in the list, then nothing is written (see the routine save_res.pro ).</p>
+<p>This feature  can be helpful  if a study  of the radio emission  of a
+planet as a function of Central Meridian Longitude and time is made.</p>
+<p>An example  file is included  in this distribution,  corresponding to
+the Mars file in the <code class="file docutils literal notranslate"><span class="pre">/home/your_name/idlproc/NCDRT/demo</span></code> directory.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="introduction.html" class="btn btn-neutral float-left" title="Introduction" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="calibrationtool.html" class="btn btn-neutral float-right" title="Calibration Tool" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright .
+      <span class="lastupdated">Last updated on Dec 31, 2024, 12:04:09 PM.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

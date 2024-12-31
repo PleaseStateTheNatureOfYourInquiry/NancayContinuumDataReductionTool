@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sky Subtraction Tool &mdash; Nançay Continuum Data Reduction Tool  0.1 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/custom.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=2709fde1"></script>
+        <script src="_static/doctools.js?v=888ff710"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Some details working with NCDRT" href="ncdrtdetails.html" />
+    <link rel="prev" title="Calibration Tool" href="calibrationtool.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            Nançay Continuum Data Reduction Tool 
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="workingwithncdrt.html">Working with NCDRT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="calibrationtool.html">Calibration Tool</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Sky Subtraction Tool</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#text-windows-and-buttons">Text windows and buttons</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#load-sky-data-file">Load Sky Data File</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#observation-information-window">Observation information window</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#process-information-window">Process information window</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#main-slider-tracking-switch">Main Slider Tracking Switch</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#sky-offset-low">Sky Offset Low</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#sky-offset-high">Sky Offset High</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#sky-shift">Sky Shift</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#do-sky-subtraction">Do Sky Subtraction</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#undo-sky-subtraction">Undo Sky Subtraction</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#dismiss">Dismiss</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="ncdrtdetails.html">Some details working with NCDRT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="demodata.html">Demonstration data from project Mars P3B01</a></li>
+<li class="toctree-l1"><a class="reference internal" href="disclaimer.html">Disclaimer</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Nançay Continuum Data Reduction Tool </a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Sky Subtraction Tool</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/skysubtractiontool.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="sky-subtraction-tool">
+<span id="skysubtractiontool"></span><h1>Sky Subtraction Tool<a class="headerlink" href="#sky-subtraction-tool" title="Link to this heading"></a></h1>
+<p>The  Sky Subtraction Tool  allows to  subtract two  observations from
+each other.
+This is of particular  use when the  data concern solar system objects,
+in which the same  spot of the sky  is observed with and without the object.</p>
+<p>If  calibration is  applied to  the data,  then the  same calibration
+table is used to simultaneously calibrate the sky data. Note that the
+calibration   factors  can   differ  between   the  object   and  sky
+observations,  as  both  observations  could have  been  made  during
+different epochs.</p>
+<p>The process  of subtraction takes places AFTER  the individual offset
+corrections to both the object and the sky observations.</p>
+<div class="admonition-important admonition">
+<p class="admonition-title">important</p>
+<p>If  you want to save  the results of the  subtraction to a <code class="file docutils literal notranslate"><span class="pre">.res</span></code> file  using the  ‘save’ button in  the main widget
+(see <a class="reference internal" href="workingwithncdrt.html#saveresults"><span class="std std-ref">save results</span></a>), then the Sky Subtraction Tool must be open!</p>
+</div>
+<section id="text-windows-and-buttons">
+<h2>Text windows and buttons<a class="headerlink" href="#text-windows-and-buttons" title="Link to this heading"></a></h2>
+<section id="load-sky-data-file">
+<h3>Load Sky Data File<a class="headerlink" href="#load-sky-data-file" title="Link to this heading"></a></h3>
+<p><code class="file docutils literal notranslate"><span class="pre">sky_load_obs.pro</span></code></p>
+<p>Load a  file that contains the  sky observation. The  format of the
+file and the  loading process are entirly similar  to the Load Data
+File in the main widget. This includes the averaging. The result is
+shown in a plot with the same structure as the Results plot.</p>
+</section>
+<section id="observation-information-window">
+<h3>Observation information window<a class="headerlink" href="#observation-information-window" title="Link to this heading"></a></h3>
+<p>Shows  information (name,  time, etc.)  of the  current observation
+loaded into NCDRT.</p>
+</section>
+<section id="process-information-window">
+<h3>Process information window<a class="headerlink" href="#process-information-window" title="Link to this heading"></a></h3>
+<p>Shows  information (warnings etc.) of the current process.</p>
+</section>
+<section id="main-slider-tracking-switch">
+<h3>Main Slider Tracking Switch<a class="headerlink" href="#main-slider-tracking-switch" title="Link to this heading"></a></h3>
+<p><code class="file docutils literal notranslate"><span class="pre">sky_subtract_event.pro</span></code>  switch  <code class="code docutils literal notranslate"><span class="pre">main_slider_track</span></code></p>
+<p>By default, the  offset cutting sliders of the  sky observation are
+set  to the  same values  as the  object observation.  If  the main
+sliders  are changed, the  sky sliders  will also  change. Pressing
+this   button   will   give   independent  control   of   the   sky
+sliders.  Pressing it  again will  undo  this control  and set  the
+sliders back to the main slider values.</p>
+</section>
+<section id="sky-offset-low">
+<h3>Sky Offset Low<a class="headerlink" href="#sky-offset-low" title="Link to this heading"></a></h3>
+<p><code class="file docutils literal notranslate"><span class="pre">sky_subtract_event.pro</span></code></p>
+<p>The cutting value for the low offset. The value is shown in the top
+left frame of  the plot (with a dotted line).  The default value is
+the offset value from the main widget.</p>
+</section>
+<section id="sky-offset-high">
+<h3>Sky Offset High<a class="headerlink" href="#sky-offset-high" title="Link to this heading"></a></h3>
+<p><code class="file docutils literal notranslate"><span class="pre">sky_subtract_event.pro</span></code></p>
+<p>The cutting  value for the high  offset. The value is  shown in the
+top left frame of the plot  (with a dotted line). The default value
+is the offset value from the main widget.</p>
+</section>
+<section id="sky-shift">
+<h3>Sky Shift<a class="headerlink" href="#sky-shift" title="Link to this heading"></a></h3>
+<p><code class="file docutils literal notranslate"><span class="pre">sky_apply_lin_cut.pro</span></code></p>
+<p>The time shift  in the sky observation before  subtracting from the
+object. The extremes  are set to -25 and +25, and  can of course be
+changed  (in sky_subtract_display.pro).  The shifting  takes places
+after  the offset correction  has been  performed. The  time points
+left blank are set to zero.</p>
+</section>
+<section id="do-sky-subtraction">
+<h3>Do Sky Subtraction<a class="headerlink" href="#do-sky-subtraction" title="Link to this heading"></a></h3>
+<p><code class="file docutils literal notranslate"><span class="pre">sky_subtract_event.pro</span></code>  switch  <code class="code docutils literal notranslate"><span class="pre">sky_subtract_apply</span></code></p>
+<p>Apply the sky subtraction to the data.</p>
+</section>
+<section id="undo-sky-subtraction">
+<h3>Undo Sky Subtraction<a class="headerlink" href="#undo-sky-subtraction" title="Link to this heading"></a></h3>
+<p><code class="file docutils literal notranslate"><span class="pre">sky_subtract_event.pro</span></code>  switch  <code class="code docutils literal notranslate"><span class="pre">sky_subtract_apply</span></code></p>
+<p>Undo the sky subtraction.</p>
+</section>
+<section id="dismiss">
+<h3>Dismiss<a class="headerlink" href="#dismiss" title="Link to this heading"></a></h3>
+<p>Dismiss the Sky Subtraction Tool.</p>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="calibrationtool.html" class="btn btn-neutral float-left" title="Calibration Tool" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="ncdrtdetails.html" class="btn btn-neutral float-right" title="Some details working with NCDRT" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright .
+      <span class="lastupdated">Last updated on Dec 31, 2024, 12:04:09 PM.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
