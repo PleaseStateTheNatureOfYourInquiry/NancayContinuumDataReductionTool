@@ -19,8 +19,9 @@ In fact, I ran it several years ago successfully on a `GDL distribution <https:/
 At this time it would probably be a good idea to translate the whole project to Python, using PyQt as the tool to build the GUI.
 
 
-These instruction pages (NCDRT V2.1 August 2004) are adapted from the content of the :file:`ncdrt_v2.1_help.txt` file and transformed to ReStructured Text format to be able to compile
-to html with a ReadTheDocs theme.
+These instruction pages (NCDRT V2.1 August 2004) are adapted from the content of 
+the `ncdrt_v2.1_help.txt <https://github.com/PleaseStateTheNatureOfYourInquiry/NancayContinuumDataReductionTool/blob/main/distribution/ncdrt_v2.1_help.txt>`_ 
+file and transformed to ReStructured Text format to be able to compile to html with a ReadTheDocs theme.
 The original file can be found in the distribution folder of the repository.
 
 The  file and  parameter names have been chosen to be as obvious as possible and as many comments as possible have  been included in the programme 
@@ -34,7 +35,7 @@ sources.
 .. toctree::
    :hidden:
 
-   introduction
+   installingncdrt
    workingwithncdrt
    calibrationtool
    skysubtractiontool

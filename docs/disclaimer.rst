@@ -19,7 +19,3 @@ expanding the tool with other utilities.
 | Maarten Roos-Serote
 | Lisbon, August 2004.
 
-
-At the time publishing of this GitHub repository (December 2024), it would probably be a good idea to translate the whole project to Python, using PyQt as 
-the tool to build the GUI.
-

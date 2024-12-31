@@ -121,7 +121,7 @@ change  from normal to  average mode  in the  current observation's
 process  (:file:`ncdrt_display_event.pro`).
 The :file:`sky_load_obs.pro` routine also needs to be adapted.
 
-Search for the  USER: AVERAGING   keyword in these programme files.
+Search for the  :code:`USER: AVERAGING`  keyword in these programme files.
 
 Whenever a fits  file is loaded, the fits file  list of the current
 directory is  determined and stored in  NCDRT. This is  used in the
@@ -135,15 +135,15 @@ have these files in the same directory as the fits files.
 load_obs.pro  will also  search for  the presence  of  result files
 produced previously. If it finds such  a file, it will read and set
 the  slider settings  from it.  The order  of priority  is  :file:`.res_cal`
-:file:`.res_av_cal`, :file:`.res` :file:`.res_av` (see  Save Result).  The routines involved
-are  read_res.pro and read_res_av.pro  In case  there is  no result
-file, NCDRT will define standard settings for the sliders.
+:file:`.res_av_cal`, :file:`.res` :file:`.res_av` (see :ref:`Save Result <saveresults>`).
+The routines involved are :file:`read_res.pro and` :file:`read_res_av.pro`.
+In case  there is  no result file, NCDRT will define standard settings for the sliders.
 
 After  loading the  data and  setting  the sliders,  the result  is
 determined by  calling :file:`show_lin_cut.pro` and  :file:`apply_lin_cut.pro`
 (see section 5.1 on the working of these routines).
 
-The  results are  shown on  the  plots (scissors  and results)  and
+The  results are  shown on  the  plots (:ref:`scissors <scissorswitch>`  and results)  and
 written to the large text window in the right column.
 
 The :code:`n_channel`  and :code:`ch_address`  are kept as  they are.   For the
@@ -250,12 +250,11 @@ Invokes the calibration tool. See :ref:`Calibration Tool <calibrationtool>` for 
 Create :file:`.ps`  Of Result (Standard): :file:`write_result_2_ps.pro`.
 
 This creates a standard postscript file of the current result, like
-in Save  Result (see above). The  postscript file is  named like in
-Save Result, with the extention .ps to it.
+in :ref:`Save Result <saveresults>`. 
+The  postscript file is  named like in :ref:`Save Result <saveresults>`, with the extention :file:`.ps` to it.
 
-Only  those channels are  selected which  have a  1 in  the channel
-select string.   In this way, you  can for example  output just the
-result of 1 channel at wish.
+Only  those channels are  selected which  have a  1 in  the channel select string.
+In this way, you  can for example  output just the result of 1 channel at wish.
 
 The slider  settings are indicated  in the plot by  dotted (offset)
 and dashed (peak) lines.
@@ -267,10 +266,11 @@ the plot indicate that the data were calibrated (or not calibrated)
 with a calibration table.
 
 
-Create .ps  Of Result (Choose Name): write_result_2_ps.pro 
-Same as  previous button, but  now you can  choose the name  of the
-result file.
+Create :file:`.ps`  Of Result (Choose Name): :file:`write_result_2_ps.pro`.
+Same as  previous button, but  now you can  choose the name  of the result file.
 
+
+.. _applycalibration:
 
 Apply Calibration (Short Cut)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -279,16 +279,19 @@ Apply Calibration (Short Cut)
 
 Using this button the  calibration of the current calibration table
 is applied to the data without having to go to the Calibration Tool
-Widget.   It  is  the  same  as Apply  Calibration  button  of  the
-Calibration  Tool.    The  function  will  only  be   active  if  a
-calibration  table  is present.   This  and  all other  calibration
-functions have to be performed with the Calibration Tool.
+Widget.   It  is  the  same  as  Apply  Calibration  button  of  the
+:ref:`Calibration  Tool <calibrationtool>`.
+The  function  will  only  be   active  if  a calibration  table  is present. 
+This  and  all other  calibration functions have to be performed with the :ref:`Calibration  Tool <calibrationtool>`.
 
 
-Comment Text  Window: 
+
+Comment Text Window
+^^^^^^^^^^^^^^^^^^^^
+
 This window is  an editable window.  It allows the  user to write a
 maximum of 40 characters long comment line. The line is included in
-the result file when the  'Save Result' buttom is pressed, preceded
+the result file when the  :ref:`Save Result <saveresults>` buttom is pressed, preceded
 by the word ' Comment : '.  By using the grep and awk function in a
 UNIX operating system  on all the existing result  files a log file
 of all the comments can easily be made.
@@ -297,7 +300,7 @@ of all the comments can easily be made.
 .. _saveresults:
 
 Save Result
-^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^
 
 :file:`save_res.pro`
 
@@ -331,12 +334,12 @@ The offset  sliders determine the part  of the data to  be used for
 the determination  of the offset.   There is a  build-in protection
 that prevents  these sliders from having  inappropriate values: the
 peak sliders must be at least  4 time units apart for the curve_fit
-procedure  in the apply_lin_cut.pro  routine to  work, and  the low
+procedure  in the :file:`apply_lin_cut.pro`  routine to  work, and  the low
 offset slider  cannot be larger  than the high offset  slider.  low
 sliders cannot be set to more than half the range, Also, the offset
 sliders cannot  be set to 0 or  to the maximum of  points.  This is
-checked in  show_lin_cut.pro .  See section 5.1  for further detail
-on the working of show_lin_cut.pro and apply_lin_cut.pro .
+checked in  :file:`show_lin_cut.pro`.  See section 5.1  for further detail
+on the working of :file:`show_lin_cut.pro` and :file:`apply_lin_cut.pro`.
 
 The result of the cutting can  be seen in the Scissors plot window.
 They change dynamically as the  slider values are changed. See also

@@ -21,7 +21,7 @@
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Calibration Tool" href="calibrationtool.html" />
-    <link rel="prev" title="Introduction" href="introduction.html" /> 
+    <link rel="prev" title="Installing NCDRT" href="installingncdrt.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -44,7 +44,7 @@
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installingncdrt.html">Installing NCDRT</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Working with NCDRT</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#preparing-for-using-ncdrt">Preparing for using NCDRT</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#starting-ncdrt">Starting NCDRT</a></li>
@@ -58,6 +58,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#process-information-window">Process information window</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#ncdrt-calibration-tool">NCDRT Calibration Tool</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#apply-calibration-short-cut">Apply Calibration (Short Cut)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#comment-text-window">Comment Text Window</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#save-result">Save Result</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#sliders">Sliders</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#information-text-window">Information Text Window</a></li>
@@ -183,7 +184,7 @@ as well as  the automatic (de-)selection of averaging  channels if the</p>
 change  from normal to  average mode  in the  current observation’s
 process  (<code class="file docutils literal notranslate"><span class="pre">ncdrt_display_event.pro</span></code>).
 The <code class="file docutils literal notranslate"><span class="pre">sky_load_obs.pro</span></code> routine also needs to be adapted.</p>
-<p>Search for the  USER: AVERAGING   keyword in these programme files.</p>
+<p>Search for the  <code class="code docutils literal notranslate"><span class="pre">USER:</span> <span class="pre">AVERAGING</span></code>  keyword in these programme files.</p>
 <p>Whenever a fits  file is loaded, the fits file  list of the current
 directory is  determined and stored in  NCDRT. This is  used in the
 Load Next Data File and  Load Previous Data File actions (see below
@@ -194,13 +195,13 @@ have these files in the same directory as the fits files.</p>
 <p>load_obs.pro  will also  search for  the presence  of  result files
 produced previously. If it finds such  a file, it will read and set
 the  slider settings  from it.  The order  of priority  is  <code class="file docutils literal notranslate"><span class="pre">.res_cal</span></code>
-<code class="file docutils literal notranslate"><span class="pre">.res_av_cal</span></code>, <code class="file docutils literal notranslate"><span class="pre">.res</span></code> <code class="file docutils literal notranslate"><span class="pre">.res_av</span></code> (see  Save Result).  The routines involved
-are  read_res.pro and read_res_av.pro  In case  there is  no result
-file, NCDRT will define standard settings for the sliders.</p>
+<code class="file docutils literal notranslate"><span class="pre">.res_av_cal</span></code>, <code class="file docutils literal notranslate"><span class="pre">.res</span></code> <code class="file docutils literal notranslate"><span class="pre">.res_av</span></code> (see <a class="reference internal" href="#saveresults"><span class="std std-ref">Save Result</span></a>).
+The routines involved are <code class="file docutils literal notranslate"><span class="pre">read_res.pro</span> <span class="pre">and</span></code> <code class="file docutils literal notranslate"><span class="pre">read_res_av.pro</span></code>.
+In case  there is  no result file, NCDRT will define standard settings for the sliders.</p>
 <p>After  loading the  data and  setting  the sliders,  the result  is
 determined by  calling <code class="file docutils literal notranslate"><span class="pre">show_lin_cut.pro</span></code> and  <code class="file docutils literal notranslate"><span class="pre">apply_lin_cut.pro</span></code>
 (see section 5.1 on the working of these routines).</p>
-<p>The  results are  shown on  the  plots (scissors  and results)  and
+<p>The  results are  shown on  the  plots (<a class="reference internal" href="#scissorswitch"><span class="std std-ref">scissors</span></a>  and results)  and
 written to the large text window in the right column.</p>
 <p>The <code class="code docutils literal notranslate"><span class="pre">n_channel</span></code>  and <code class="code docutils literal notranslate"><span class="pre">ch_address</span></code>  are kept as  they are.   For the
 first file of a new session, they are set to</p>
@@ -264,11 +265,10 @@ that are included in this average channel are deselected.</p>
 <p>Invokes the calibration tool. See <a class="reference internal" href="calibrationtool.html#calibrationtool"><span class="std std-ref">Calibration Tool</span></a> for a detailed description.</p>
 <p>Create <code class="file docutils literal notranslate"><span class="pre">.ps</span></code>  Of Result (Standard): <code class="file docutils literal notranslate"><span class="pre">write_result_2_ps.pro</span></code>.</p>
 <p>This creates a standard postscript file of the current result, like
-in Save  Result (see above). The  postscript file is  named like in
-Save Result, with the extention .ps to it.</p>
-<p>Only  those channels are  selected which  have a  1 in  the channel
-select string.   In this way, you  can for example  output just the
-result of 1 channel at wish.</p>
+in <a class="reference internal" href="#saveresults"><span class="std std-ref">Save Result</span></a>.
+The  postscript file is  named like in <a class="reference internal" href="#saveresults"><span class="std std-ref">Save Result</span></a>, with the extention <code class="file docutils literal notranslate"><span class="pre">.ps</span></code> to it.</p>
+<p>Only  those channels are  selected which  have a  1 in  the channel select string.
+In this way, you  can for example  output just the result of 1 channel at wish.</p>
 <p>The slider  settings are indicated  in the plot by  dotted (offset)
 and dashed (peak) lines.</p>
 <p>Other information  is also written in  the plot. From  the pou file
@@ -276,23 +276,24 @@ come the indications  of the frequency and the  name of the object.
 The indication (cal) (or (not cal)) after the ‘peak flux’ string in
 the plot indicate that the data were calibrated (or not calibrated)
 with a calibration table.</p>
-<p>Create .ps  Of Result (Choose Name): write_result_2_ps.pro
-Same as  previous button, but  now you can  choose the name  of the
-result file.</p>
+<p>Create <code class="file docutils literal notranslate"><span class="pre">.ps</span></code>  Of Result (Choose Name): <code class="file docutils literal notranslate"><span class="pre">write_result_2_ps.pro</span></code>.
+Same as  previous button, but  now you can  choose the name  of the result file.</p>
 </section>
 <section id="apply-calibration-short-cut">
-<h3>Apply Calibration (Short Cut)<a class="headerlink" href="#apply-calibration-short-cut" title="Link to this heading"></a></h3>
+<span id="applycalibration"></span><h3>Apply Calibration (Short Cut)<a class="headerlink" href="#apply-calibration-short-cut" title="Link to this heading"></a></h3>
 <p><code class="file docutils literal notranslate"><span class="pre">apply_calibration.pro</span></code></p>
 <p>Using this button the  calibration of the current calibration table
 is applied to the data without having to go to the Calibration Tool
-Widget.   It  is  the  same  as Apply  Calibration  button  of  the
-Calibration  Tool.    The  function  will  only  be   active  if  a
-calibration  table  is present.   This  and  all other  calibration
-functions have to be performed with the Calibration Tool.</p>
-<p>Comment Text  Window:
-This window is  an editable window.  It allows the  user to write a
+Widget.   It  is  the  same  as  Apply  Calibration  button  of  the
+<a class="reference internal" href="calibrationtool.html#calibrationtool"><span class="std std-ref">Calibration  Tool</span></a>.
+The  function  will  only  be   active  if  a calibration  table  is present.
+This  and  all other  calibration functions have to be performed with the <a class="reference internal" href="calibrationtool.html#calibrationtool"><span class="std std-ref">Calibration  Tool</span></a>.</p>
+</section>
+<section id="comment-text-window">
+<h3>Comment Text Window<a class="headerlink" href="#comment-text-window" title="Link to this heading"></a></h3>
+<p>This window is  an editable window.  It allows the  user to write a
 maximum of 40 characters long comment line. The line is included in
-the result file when the  ‘Save Result’ buttom is pressed, preceded
+the result file when the  <a class="reference internal" href="#saveresults"><span class="std std-ref">Save Result</span></a> buttom is pressed, preceded
 by the word ‘ Comment : ‘.  By using the grep and awk function in a
 UNIX operating system  on all the existing result  files a log file
 of all the comments can easily be made.</p>
@@ -325,12 +326,12 @@ able to read them afterwards.</p>
 the determination  of the offset.   There is a  build-in protection
 that prevents  these sliders from having  inappropriate values: the
 peak sliders must be at least  4 time units apart for the curve_fit
-procedure  in the apply_lin_cut.pro  routine to  work, and  the low
+procedure  in the <code class="file docutils literal notranslate"><span class="pre">apply_lin_cut.pro</span></code>  routine to  work, and  the low
 offset slider  cannot be larger  than the high offset  slider.  low
 sliders cannot be set to more than half the range, Also, the offset
 sliders cannot  be set to 0 or  to the maximum of  points.  This is
-checked in  show_lin_cut.pro .  See section 5.1  for further detail
-on the working of show_lin_cut.pro and apply_lin_cut.pro .</p>
+checked in  <code class="file docutils literal notranslate"><span class="pre">show_lin_cut.pro</span></code>.  See section 5.1  for further detail
+on the working of <code class="file docutils literal notranslate"><span class="pre">show_lin_cut.pro</span></code> and <code class="file docutils literal notranslate"><span class="pre">apply_lin_cut.pro</span></code>.</p>
 <p>The result of the cutting can  be seen in the Scissors plot window.
 They change dynamically as the  slider values are changed. See also
 the explanation of the <a class="reference internal" href="#scissorswitch"><span class="std std-ref">Scissor Switch</span></a> section.</p>
@@ -386,7 +387,7 @@ the Mars file in the <code class="file docutils literal notranslate"><span class
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="introduction.html" class="btn btn-neutral float-left" title="Introduction" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="installingncdrt.html" class="btn btn-neutral float-left" title="Installing NCDRT" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
         <a href="calibrationtool.html" class="btn btn-neutral float-right" title="Calibration Tool" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
@@ -394,7 +395,7 @@ the Mars file in the <code class="file docutils literal notranslate"><span class
 
   <div role="contentinfo">
     <p>&#169; Copyright .
-      <span class="lastupdated">Last updated on Dec 31, 2024, 12:04:09 PM.
+      <span class="lastupdated">Last updated on Dec 31, 2024, 12:16:27 PM.
       </span></p>
   </div>
 

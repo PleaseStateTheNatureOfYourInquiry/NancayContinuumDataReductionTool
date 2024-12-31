@@ -1,14 +1,10 @@
 
 
-.. _introduction:
+.. _installingncdrt:
 
-Introduction
-============
+Installing NCDRT
+=================
 
-
-
-Installing and adapting NCDRT to your system
---------------------------------------------
 
 
 NCDRT uses  IDL 5.4  or higher.  Untar  the :file:`NCDRT_V2.1.tar` file  to a
